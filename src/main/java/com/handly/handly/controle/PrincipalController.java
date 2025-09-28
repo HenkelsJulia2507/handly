@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/principal")
-public class principalControle {
+public class PrincipalController {
 /*caminho de pastas*/
     @GetMapping("/administrativo")
     public String acessarPrincipal() {

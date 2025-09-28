@@ -7,13 +7,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.handly.handly.modelos.Cliente;
+import com.handly.handly.services.ClienteService;
 
 @Controller
-public class ControleCliente {
+public class ClienteController {
 
     @Autowired
-    private ClienteRepositorio clienteRepositorio;
+    private ClienteService service;
 
     // Abre formulário de cadastro
     @GetMapping("/cadastroCliente")
@@ -29,7 +31,7 @@ public class ControleCliente {
         if (result.hasErrors()) {
             return cadastrar(cliente);
         }
-        clienteRepositorio.saveAndFlush(cliente);
+        service.salvarCliente(cliente);
         return new ModelAndView("redirect:/loginCliente"); // depois do cadastro vai pro login
     }
 
@@ -42,7 +44,7 @@ public class ControleCliente {
     // Valida login
     @PostMapping("/logarCliente")
     public ModelAndView logar(@RequestParam String email, @RequestParam String senha) {
-        Cliente cliente = clienteRepositorio.findByEmailAndSenha(email, senha);
+        Cliente cliente = service.getEmailAndSenha(email, senha);
         if (cliente != null) {
             return new ModelAndView("redirect:/home"); // se login OK, vai pra home
         } else {
