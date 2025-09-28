@@ -20,10 +20,7 @@ public class Categoria {
     private String descricao;
     @OneToMany(mappedBy = "categoria")
     private List<Servico> servicos;
-
-    public Categoria() {
-    }
-
+ 
     public Categoria(Long id, String nome, String descricao, List<Servico> servicos) {
         this.id = id;
         this.nome = nome;
