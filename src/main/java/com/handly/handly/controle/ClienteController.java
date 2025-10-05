@@ -32,7 +32,7 @@ public class ClienteController {
             return cadastrar(cliente);
         }
         service.salvarCliente(cliente);
-        return new ModelAndView("redirect:/loginCliente"); // depois do cadastro vai pro login
+        return new ModelAndView("redirect:/home"); // depois do cadastro vai pra home
     }
 
     // Abre formulário de login

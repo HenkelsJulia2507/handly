@@ -84,4 +84,14 @@ public class Categoria {
             return false;
         return true;
     }
+
+    public void salvarCategoria(Categoria categoria) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'salvarCategoria'");
+    }
+
+    public Categoria getEmailAndSenha(String email, String senha) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getEmailAndSenha'");
+    }
 }
