@@ -1,0 +1,165 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: #133b26;
+  color: #fff;
+}
+
+/* TOPO */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #0f2c1d;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.logo span {
+  font-size: 14px;
+  color: #ccc;
+  margin-left: 3px;
+  padding: 15px 10px;
+
+}
+
+.icones {
+  display: flex;
+  gap: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+/* TEXTO */
+.conteudo {
+  flex: 1;
+  max-width: 400px;
+}
+.conteudo h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 20px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #1d5a38;
+}
+
+.instagram {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* IMAGEM */
+.imagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.imagem img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* RODAPÉ */
+.rodape {
+  background: #0f2c1d;
+  padding: 20px;
+  margin-top: 20px;
+}
+.detalhe {
+  width: 100px;
+  height: 10px;
+  background: #1d5a38;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+.quadradobox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quadrado {
+  justify-content: center;
+  width: 90%;  /* Define a largura do right */
+  height: 580px; /* Define a altura do quadrado (igual à largura) */
+  background: #486D4A url('img/jobs.png') no-repeat right; /* Define a cor de fundo do quadrado */
+}
+
+.buttons-box {
+  background-color: #486D4A;
+  width: 350px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-box h2 {
+  padding: 15px 0px 0px 15px;
+}
+
+.buttons {
+  width: 350px;
+  height: auto;
+  margin-top: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.buttons button {
+  display: inline-block;
+  width: 270px;
+  margin-left: 40px;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+}
+
+.icons {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a{
+  color: white;
+}
