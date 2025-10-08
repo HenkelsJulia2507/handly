@@ -1,8 +1,13 @@
 package com.handly.handly.modelos;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.PrimaryKeyJoinColumn;
+
+
 import jakarta.persistence.DiscriminatorValue;
 
 @Entity
@@ -11,21 +16,29 @@ import jakarta.persistence.DiscriminatorValue;
 @PrimaryKeyJoinColumn(name = "id")
 public class PrestadorServico extends Usuario {
 
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue
+    private Long id;
     private String nome;
     private String telefone;
-    private String endereco;
-    private String cpf;
+    private String email;
+    private String senha;
+    private String cep;
 
-    public PrestadorServico() {
+    @ManyToOne //muitos prestadores para um cliente
+    private Cliente cliente;
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
     }
 
-    public PrestadorServico(Long id, String username, String password, String role, String nome, String telefone,
-            String endereco, String cpf) {
-        super(id, username, password, role);
-        this.nome = nome;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.cpf = cpf;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -44,19 +57,36 @@ public class PrestadorServico extends Usuario {
         this.telefone = telefone;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
 }

@@ -105,4 +105,9 @@ public class Servico {
             return false;
         return true;
     }
+
+    public void salvarServico(Servico servico) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'salvarServico'");
+    }
 }
