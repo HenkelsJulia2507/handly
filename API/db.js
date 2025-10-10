@@ -1,20 +1,14 @@
 //TODO: implementar o banco de dados aqui
-const { Client } = require('pg');
+const mysql = require('mysql2/promise');
 
-const client = new Client({
-    host: 'localhost',
-    user: 'seu_usuario',
-    password: 'sua_senha',
-    database: 'nome_do_banco',
-    port: 5432
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'seu_usuario',
+  password: 'sua_senha',
+  database: 'seu_banco',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-client.connect((err) => {
-    if (err) {
-        console.error('Erro ao conectar ao PostgreSQL:', err);
-        return;
-    }
-    console.log('Conectado ao banco de dados PostgreSQL!');
-});
-
-module.exports = client;
+module.exports = pool;
