@@ -6,51 +6,73 @@
   <title>Cadastro</title>
   <link rel="stylesheet" href="cadastroCliente.css">
 </head>
+<script>
+  document.getElementById('formCadastro').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const dados = {
+      nome: this.nome.value,
+      telefone: this.telefone.value,
+      email: this.email.value,
+      password: this.password.value,
+    };
+
+    fetch('http://localhost:3000/salvar', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados),
+    })
+    .then(res => res.json())
+    .then(data => alert(data.mensagem || 'Cadastro realizado com sucesso!'))
+    .catch(() => alert('Erro ao cadastrar'));
+  });
+</script>
 
 <body>
   <div class="container">
+    
 
-    <div class="imagem">
-      <img src="./img/construction.png" alt="">
-      <a href="cadastroPrestador.html"><button class="prestador"> Quero ser prestador</button></a>
-    </div>
+      <div class="imagem">
+        <img src="./img/construction.png" alt="">
+        <a href="cadastroPrestador.html"><button class="prestador"> Quero ser prestador</button></a>
+      </div>
 
 
-    <div class="formulario">
-      <form action="">
-        <h1>O serviço que você <br> procura, está aqui!</h1>
-        <div class="campo-input">
-          <label for="nome">Nome</label><br>
-          <input type="text" id="nome" />
+      <div class="formulario">
+        <form id = "formCadastro"> 
+          <h1>O serviço que você <br> procura, está aqui!</h1>
+          <div class="campo-input">
+            <label for="nome">Nome</label><br>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+
+          <div class="campo-input">
+            <label for="telefone">Telefone</label><br>
+            <input type="text" id="telefone" name="telefone" required />
+          </div>
+
+          <div class="campo-input">
+            <label for="email">E-mail</label><br>
+            <input type="text" id="email" name="email" required/>
+          </div>
+
+          <div class="campo-input">
+            <label for="password">Senha</label><br>
+            <input type="password" id="password" name="password" required/>    
+            </div>    
+            <p>
+              <input type="checkbox" required/>
+              <span> Li e concordo com a</span>
+              <a href="#">Política de Privacidade</a> e os
+              <a href="#">Termos de Uso</a>
+              <br></br>
+              <button type="submit">Quero me cadastrar!</button>
+              <br></br>
+              <span><a href="loginCliente.html">Já tenho uma conta</a></span>
+            </p>
+        </form>
         </div>
-
-        <div class="campo-input">
-          <label for="telefone">Telefone</label><br>
-          <input type="text" id="telefone" />
-        </div>
-
-        <div class="campo-input">
-          <label for="email">E-mail</label><br>
-          <input type="text" id="email" />
-        </div>
-
-        <div class="campo-input">
-          <label for="password">Senha</label><br>
-          <input type="password" id="password" />    
-        </div>    
-          <p>
-            <input type="checkbox" />
-            <span> Li e concordo com a</span>
-            <a href="#">Política de Privacidade</a> e os
-            <a href="#">Termos de Uso</a>
-             <br></br>
-            <button>Quero me cadastrar!</button>
-            <br></br>
-            <span><a href="loginCliente.html">Já tenho uma conta</a></span>
-          </p>
-        </div>
-      </form>
-    </div>
+      </div>    
   </div>
 </body>
 </html>
