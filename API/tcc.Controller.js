@@ -6,12 +6,6 @@ const path = require('path');
 exports.teste = (req,res) => {
     res.send("Teste")
 }
-
-//Rota HTML
-exports.html = (req, res) => {
-    res.sendFile(path.join(__dirname, "tcc.html"));
-};
-
 //Rota cadastro cliente
 exports.clientes = async (req, res) => {
     const { nome, telefone, email, password } = req.body;

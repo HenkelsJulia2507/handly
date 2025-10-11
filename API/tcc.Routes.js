@@ -6,8 +6,6 @@ const pool = require('./db.js');
 
 //rota TESTE
 router.get("/teste1", tccController.teste);
-//Rota página HTML
-router.get("/handly", tccController.html);
 //Rota cadastro cliente
 router.post("/salvarClientes", tccController.clientes);
 //Rota cadastro de Prestador
