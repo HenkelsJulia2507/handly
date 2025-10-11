@@ -11,22 +11,22 @@
 <body>
     <div class="container">
         <div class="formulario">
-            <form action="">
+            <form id="formLoginPrestador">
                 <div class="titulo">
                     <h1>Tem clientes te <br> esperando!</h1>
                 </div>
 
                 <div class="campo-input">
                     <label for="email">E-mail</label><br>
-                    <input type="text" id="email" />
+                    <input type="text" id="email" name="email" required/>
                 </div>
 
                 <div class="campo-input">
                     <label for="password">Senha</label><br>
-                    <input type="password" id="password" />
+                    <input type="password" id="password" name="password" required/>
                 </div>
 
-                <button>Entrar</button>
+                <button type="submit">Entrar</button>
 
                 <p>
                     <span>Ainda não possui uma conta? </span>
@@ -42,5 +42,31 @@
         </div>
     </div>
 </body>
+<script>
+  document.getElementById('formLoginPrestador').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const dados = {
+      email: this.email.value,
+      password: this.password.value
+    };
+
+    fetch('http://localhost:3000/loginPrestador', { 
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados),
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.sucesso) {
+        alert('Login realizado com sucesso!');
+        // Redirecionar para a página desejada após login
+      } else {
+        alert('Email ou senha inválidos.');
+      }
+    })
+    .catch(() => alert('Erro ao tentar logar.'));
+  });
+</script>
 
 </html>
