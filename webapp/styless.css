@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +5,19 @@
   font-family: 'Arial', sans-serif;
 }
 
+header{
+  background: #0f2c1d;
+  padding: 10px 20px;
+  color: white;
+  text-align: left;
+  font-size: 24px;
+}
+
 body {
   background: #133b26;
   color: #fff;
 }
 
-/* TOPO */
 .topo {
   display: flex;
   justify-content: space-between;
@@ -40,7 +46,6 @@ body {
   cursor: pointer;
 }
 
-/* CONTAINER */
 .container {
   display: flex;
   justify-content: space-between;
@@ -49,7 +54,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* TEXTO */
 .conteudo {
   flex: 1;
   max-width: 400px;
@@ -84,7 +88,6 @@ body {
   color: #ccc;
 }
 
-/* IMAGEM */
 .imagem {
   flex: 1;
   display: flex;
@@ -95,7 +98,6 @@ body {
   border-radius: 10px;
 }
 
-/* RODAPÉ */
 .rodape {
   background: #0f2c1d;
   padding: 20px;
@@ -116,9 +118,9 @@ body {
 }
 .quadrado {
   justify-content: center;
-  width: 90%;  /* Define a largura do right */
-  height: 580px; /* Define a altura do quadrado (igual à largura) */
-  background: #486D4A url('img/jobs.png') no-repeat right; /* Define a cor de fundo do quadrado */
+  width: 90%; 
+  height: 580px;
+  background: #486D4A url('img/jobs.png') no-repeat right; 
 }
 
 .buttons-box {
@@ -163,3 +165,114 @@ h2 {
 a{
   color: white;
 }
+
+.barra2{
+  width: 100%;
+  display: flex;
+  height: 20px;
+  background-color: #34614D;
+  margin: 0px;
+}
+
+.barra3{
+  width: 100%;
+  display: flex;
+  height: 20px;
+  background-color: #7BA184;
+  margin: 0px;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- categoria -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.categorias {
+  text-align: left;
+  padding: 50px 100px;
+}
+
+.categorias h2 {
+  color: #073b2f;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.categoria {
+  background-color: #335f4c;
+  border-radius: 15px;
+  padding: 25px 10px;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.categoria:hover {
+  transform: translateY(-5px);
+  background-color: #2b5242;
+}
+
+.categoria img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1); 
+}
+
+.categoria p {
+  color: white;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+
+.quadrado2{
+  justify-content: center;
+  width: 100%;  
+  height: 720px; 
+  background: #0f2c1d no-repeat right; 
+}
+
+
+.circulo1{
+  width: 100px;
+  height: 100px;
+  background-color: #0f2c1d;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.circulo2{
+  width: 165px;
+  height: 100px;
+  background-color: #34614D;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.circulo3{
+  width: 200px;
+  height: 230px;
+  background-color: #7BA184;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- motivos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
