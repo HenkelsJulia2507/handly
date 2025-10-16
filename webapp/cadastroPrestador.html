@@ -13,28 +13,38 @@
 <body>
     <div class="container">
         <div class="formulario">
-            <form action="">
+            <form id ="formPrestador">
                 <div class="titulo">
                     <h1>Tem clientes te</h1>
                     <h1> esperando. Cadastre-se!</h1>
                 </div>
 
                 <div class="campo-input">
+                    <label for="nome">Nome</label><br>
+                    <input type="text" id="nome" name="nome" required />
+                </div>
+
+                <div class="campo-input">
+                    <label for="telefone">Telefone</label><br>
+                    <input type="text" id="telefone" name="telefone" required />
+                </div>
+
+                <div class="campo-input">
                     <label for="email">E-mail</label><br>
-                    <input type="text" id="email" />
+                    <input type="text" id="email" name="email" required/>
                 </div>
 
                 <div class="campo-input">
                     <label for="password">Senha</label><br>
-                    <input type="password" id="password" />
+                    <input type="password" id="password" name="password" required/>    
                 </div>
 
-                    <p>
-                        <button>Entrar</button>
-                    </p>
-                    <p>
-                        <span><a href="loginPrestador.html">Já tenho uma conta</a></span>
-                    </p>
+                <p>
+                    <button type="submit">Quero me cadastrar!</button>
+                </p>
+                <p>
+                    <span><a href="loginPrestador.html">Já tenho uma conta</a></span>
+                </p>
             </form>
 
 
@@ -45,5 +55,25 @@
         </div>
     </div>
 </body>
+<script>
+    document.getElementById('formPrestador').addEventListener('submit', function(e) {
+        e.preventDefault();
 
+        const dados = {
+            nome: this.nome.value,
+            telefone: this.telefone.value,
+            email: this.email.value,
+            password: this.password.value,
+        };
+
+        fetch('http://localhost:3000/salvarPrestador', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(dados)
+        })
+        .then(res => res.json())
+        .then(data => alert(data.mensagem || 'Cadastro realizado com sucesso!'))
+        .catch(() => alert('Erro ao cadastrar'));
+    });
+</script>
 </html>
