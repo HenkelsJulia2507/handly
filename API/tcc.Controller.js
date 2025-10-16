@@ -8,40 +8,40 @@ exports.teste = (req,res) => {
 }
 //Rota cadastro cliente
 exports.clientes = async (req, res) => {
-    const { nome, telefone, email, password } = req.body;
-    try {
-        await pool.execute (
-            "INSERT INTO clientes (nome, telefone, email, password) VALUES (?, ?, ?, ?)",
-            [nome, telefone, email, password]
-        );
+  const { nome, telefone, email, password } = req.body;
+  try {
+    await pool.query(
+      'INSERT INTO clientes (nome, telefone, email, password) VALUES ($1, $2, $3, $4)',
+      [nome, telefone, email, password]
+     );
     res.json ({ mensagem: "Cadastro realizado com sucesso!"});
-    }
-    catch (error) {
-        console.error(error);
-        res.status(500).json({ erro: "Erro ao salvar o cadastro"});
-    }
+  }
+  catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: "Erro ao salvar o cadastro"});
+  }
 }
 //Rota cadastro prestadores
 exports.prestadores = async (req, res) => {
-    const { nome, telefone, email, password } = req.body;
-    try {
-        await pool.execute (
-            "INSERT INTO prestadores (nome, telefone, email, password) VALUES (?, ?, ?, ?)",
-            [nome, telefone, email, password]
-        );
+  const { nome, telefone, email, password } = req.body;
+  try {
+    await pool.query(
+      "INSERT INTO prestadores (nome, telefone, email, password) VALUES ($1, $2, $3, $4)",
+      [nome, telefone, email, password]
+    );
     res.json ({ mensagem: "Cadastro realizado com sucesso!"});
-    }
-    catch (error) {
-        console.error(error);
-        res.status(500).json({ erro: "Erro ao salvar o cadastro"});
-    }
+  }
+  catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: "Erro ao salvar o cadastro"});
+  }
 }
 //Rota Login clientes
 exports.loginCliente = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const [rows] = await pool.execute(
-      'SELECT * FROM clientes WHERE email = ? AND password = ?',
+    const result = await pool.query(
+      'SELECT * FROM clientes WHERE email = $1 AND password = $2',
       [email, password]
     );
 
@@ -59,7 +59,10 @@ exports.loginCliente = async (req, res) => {
 exports.loginPrestador = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const [rows] = await pool.execute('SELECT * FROM prestadores WHERE email = ? AND password = ?', [email, password]);
+    const result = await pool.query(
+      'SELECT * FROM prestadores WHERE email = $1 AND password = $2',
+      [email, password]
+    );
     if (rows.length > 0) {
       res.json({ sucesso: true, mensagem: 'Login bem-sucedido' });
     } else {

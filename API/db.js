@@ -1,14 +1,12 @@
 //TODO: implementar o banco de dados aqui
-const mysql = require('mysql2/promise');
+const { Pool } = require('pg');
 
-const pool = mysql.createPool({
+const pool = new Pool({
   host: 'localhost',
-  user: 'root',
-  password: '',
+  user: 'postgres',
+  password: 'sua_senha_aqui',   
   database: 'api',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
+  port: 5432           
 });
 
 module.exports = pool;

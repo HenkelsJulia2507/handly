@@ -1,29 +1,24 @@
-create database api;
-use api;
-
-create table clientes  (
-    id int auto_increment primary key,
-    nome varchar(100),
-    telefone varchar(20),
-    email varchar(100) unique,
-    password varchar (100)
+CREATE DATABASE api;
+CREATE TABLE clientes (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100),
+    telefone VARCHAR(20),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(100)
 );
 
-create table prestadores (
-    id int auto_increment primary key,
-    nome varchar(100),
-    telefone varchar(20),
-    email varchar(100) unique,
-    password varchar (100)
+CREATE TABLE prestadores (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100),
+    telefone VARCHAR(20),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(100)
 );
 
-select * from clientes;
-select * from prestadores;
+SELECT * FROM clientes;
+SELECT * FROM prestadores;
 
-
-
-
--- controladores para teste
-drop table clientes;
-drop table prestadores;
-drop database api;
+-- Controladores para teste
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS prestadores;
+DROP DATABASE IF EXISTS api;
