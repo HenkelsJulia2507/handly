@@ -6,8 +6,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.PrimaryKeyJoinColumn;
-
-
 import jakarta.persistence.DiscriminatorValue;
 
 @Entity
