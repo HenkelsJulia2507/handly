@@ -1,0 +1,200 @@
+:root {
+    --color-primary: #27473A; /* Verde Escuro do Header, Títulos e Botão Primário */
+    --color-secondary: #E3E7E0; /* Verde Claro/Cinza de fundo e avatares */
+    --color-text-dark: #333;
+    --color-text-subtle: #666;
+    --color-background: #F8F8F8; /* Fundo principal da tela */
+    --color-border: #ccc;
+    --color-highlight: #486A59;
+    --color-button-text: #fff;
+}
+
+/* Base e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Cabeçalho (Header) --- */
+.header {
+    background-color: var(--color-primary);
+    padding: 15px 0;
+    width: 100vw;
+    position: center;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 5px;
+    width: 350px;
+}
+
+.search-bar input {
+    border: none;
+    padding: 5px 10px;
+    flex-grow: 1;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-text-subtle);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.user-icon {
+    width: 40px; 
+    height: 40px; 
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+/* ------------------------------------------------- */
+
+/* --- Conteúdo Principal (Main) - Mantém o layout do antigo container --- */
+.main-content-wrapper { 
+    width: 100%;
+    max-width: 1000px;
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto 0 auto;
+    padding: 40px 30px;
+    
+    /* Necessário para posicionar o rodapé de botões corretamente se o conteúdo fosse menor */
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 30px;
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* --- Item de Pedido (Detalhes) --- */
+.pedido-item {
+    padding: 20px 0;
+    flex-grow: 1; /* Permite que o conteúdo cresça e empurre os botões para baixo */
+}
+
+/* Informação do Prestador (Avatar e Nome) */
+.prestador-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.prestador-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-secondary); 
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.prestador-nome {
+    font-size: 24px;
+    color: var(--color-text-dark);
+    font-weight: normal;
+}
+
+/* Detalhes do Pedido */
+.pedido-detalhes {
+    padding-left: 65px;
+    margin-bottom: 40px; /* Espaço entre detalhes e botões */
+}
+
+.detalhe-bloco {
+    margin-bottom: 15px;
+}
+
+.detalhe-titulo {
+    font-size: 18px;
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.detalhe-valor {
+    font-size: 16px;
+    color: var(--color-text-subtle);
+    line-height: 1.4;
+}
+
+/* --- Botões de Ação no Rodapé --- */
+.pedido-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 20px;
+    /* Adiciona uma borda sutil se quiser separar do conteúdo, mas não é estritamente necessário */
+    /* border-top: 1px solid #eee; */ 
+}
+
+.action-button {
+    flex: 1; /* Faz com que os dois botões tenham a mesma largura */
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px; /* Arredondamento */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: var(--color-button-text);
+}
+
+.primary-btn {
+    background-color: var(--color-primary); /* Verde Escuro */
+}
+
+.secondary-btn {
+    background-color: var(--color-primary); /* Verde Escuro, igual ao primário, conforme a imagem */
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+    background-color: #1a3327;
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    .pedido-actions {
+        flex-direction: column;
+    }
+}
