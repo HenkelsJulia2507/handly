@@ -166,6 +166,8 @@ a{
   color: white;
 }
 
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-  barras -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+
 .barra2{
   width: 100%;
   display: flex;
@@ -247,6 +249,8 @@ body {
   background: #0f2c1d no-repeat right; 
 }
 
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-  circulos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
 .barra2{
   width: 100% !important;
   display: flex;
@@ -254,23 +258,6 @@ body {
   align-items: center;
 }
 
-.barra2 img{
-  width: 265px;
-  margin-top: 69px
-
-}
-
-/*
-
-.circulo3{
-  width: 200px;
-  height: 230px;
-  background-color: red;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}*/
 
 .circulo3{
   width: 200px;
@@ -295,13 +282,13 @@ body {
 
 .circulo1{
   width: 135px;
-  height: 180px;
+  height: 120px;
   background-color: #0f2c1d;
   border-radius: 0px 0px 90px 90px;
   justify-content: center;
   align-items: center;
   margin-left: 15px;
-  margin-top: -115px;
+  margin-top: -60px;
 }
 
 
@@ -339,6 +326,7 @@ body {
 }
 
 .square{
+  display: flex;
   background-color: #335f4c;
   width: 100px;
   height: 75px;
@@ -358,6 +346,7 @@ body {
 }
 
 .motivo1 p{
+  display: flex;
   color: black;
   text-justify: auto;
   justify-content: center;
@@ -372,37 +361,149 @@ body {
 }
 
 /*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- sobre nos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+.sobrenos{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 650px;
+  margin-top: 90px;
+}
+
 .boxsobrenos{
-  width: 1000px;
+  display: flex;
+  width: 800px;
   height: 550px;
 }
 
 .boxsobrenos{
   display: flex;
   background-color: #335f4c;
-  width: 500px;
+  width: 900px;
   height: 550px;
   border-radius: 0px 90px 90px 0px;
-  margin-top: 125px;
+
 }
 
 .boxsobrenos h3{
-  color: #073b2f;
+  display: flex;
+  color: #ffffff;
+  margin-left: 190px;
+  font-size: 33px;
+
 }
 
 .boxsobrenos p{
-  color: black;
-  margin-top: 80px;
+  color: rgb(255, 255, 255);
+  margin-top: 30px;
+  margin-left: 20px;
   display: flex;
   justify-content: center;
   text-align: justify;
- width: 200px; 
+  width: 500px; 
+  font-size: 18px;
 }
-
 
 .fotoequipe img{
   display: flex;
-  margin-left: 250px;
+  margin-left: 90px;
   border-radius: 50px;
   margin-top: 50px;
 }
+
+.textosobrenos{
+  display: flex; 
+  flex-direction: column;
+  display: flex;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=- barras e rodape -=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+
+.barra01{
+  width: 100%;
+  display: flex;
+  height: 20px;
+  background-color: #7BA184;
+  margin: 0px;
+}
+
+.barra02{
+  width: 100%;
+  display: flex;
+  height: 20px;
+  background-color: #34614D;
+  margin: 0px;
+}
+
+.footer {
+  background-color: #0f2c1d;
+  width: 100%;
+  height: 15%;
+  padding: 50px 80px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-weight: 500px;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 5px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.iconeinsta {
+  width: 18px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.logocustomizada img {
+  display: flex;
+  margin-left: 10px;
+  margin-top: 50px;
+  width: 500px;
+  height: 200px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+
+
