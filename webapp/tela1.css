@@ -282,13 +282,13 @@ body {
 
 .circulo1{
   width: 135px;
-  height: 120px;
+  height: 100px;
   background-color: #0f2c1d;
   border-radius: 0px 0px 90px 90px;
   justify-content: center;
   align-items: center;
   margin-left: 15px;
-  margin-top: -60px;
+  margin-top: -34px;
 }
 
 
@@ -325,24 +325,44 @@ body {
   font-size: 28px;
 }
 
-.square{
-  display: flex;
+.square1{
+
   background-color: #335f4c;
-  width: 100px;
+  width: 75px;
   height: 75px;
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 20px;
 }
 
-.motivo1 h4{
+.square2{
+ 
+  background-color: #335f4c;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.square3{
+ 
+  background-color: #335f4c;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.titulo h4{
   display: flex;
-  text-align: right;
+  text-align: justify;
   text-justify: center;
   color: #073b2f;
-  padding-right: 90px;
+  padding-left: 15px;
   margin-top: 40px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .motivo1 p{
@@ -357,7 +377,7 @@ body {
 .titulo{
   display: flex;
   flex-direction: row;
-  width: 350px;
+  width: 500px;
 }
 
 /*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- sobre nos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
