@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Orçamento - Handly</title>
+    <link rel="stylesheet" href="orcamentoPrestador.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo-placeholder">HANDLY</div>
+        <div class="user-icon-placeholder"></div>
+    </header>
+
+    <main class="budget-screen">
+        <form class="budget-form">
+            <h1>seu orçamento</h1>
+
+            <div class="field-group full-width">
+                <label for="prestador">nome do prestador:</label>
+                <input type="text" id="prestador" value="">
+            </div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label for="endereco">endereço domiciliar:</label>
+                    <input type="text" id="endereco" value="">
+                </div>
+                <div class="field-group">
+                    <label for="horario">horário marcado:</label>
+                    <input type="text" id="horario" value="">
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label for="observacoes">observações:</label>
+                    <input type="text" id="observacoes" value="">
+                </div>
+                <div class="field-group">
+                    <label for="servico">Serviço prestado:</label>
+                    <input type="text" id="servico" value="">
+                </div>
+            </div>
+
+            <div class="field-group full-width">
+                <label for="valor">valor:</label>
+                <input type="text" id="valor" value="">
+            </div>
+
+            <div class="button-row">
+                <button type="submit" class="button primary-action">confirmar pedido</button>
+                <button type="button" class="button secondary-action">cancelar pedido</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
