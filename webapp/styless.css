@@ -260,33 +260,50 @@ body {
 
 }
 
-
-.circulo1{
-  width: 100px;
-  height: 100px;
-  background-color: #0f2c1d;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-}
-
-.circulo2{
-  width: 165px;
-  height: 100px;
-  background-color: #34614D;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-}
+/*
 
 .circulo3{
   width: 200px;
   height: 230px;
   background-color: red;
   border-radius: 50%;
+  display: flex;
   justify-content: center;
   align-items: center;
+}*/
+
+.circulo3{
+  width: 200px;
+  height: 100px;
+  background-color: #7BA184;
+  border-radius: 0px 0px 200px 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
 }
+
+.circulo2{
+  width: 165px;
+  height: 90px;
+  background-color: #34614D;
+  border-radius: 0px 0px 100px 100px;
+  justify-content: center;
+  align-items: center;
+  margin-top: -40px;
+  }
+
+.circulo1{
+  width: 135px;
+  height: 180px;
+  background-color: #0f2c1d;
+  border-radius: 0px 0px 90px 90px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: -115px;
+}
+
 
 /*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- motivos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
 
@@ -324,7 +341,7 @@ body {
 .square{
   background-color: #335f4c;
   width: 100px;
-  height: 100px;
+  height: 75px;
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 20px;
@@ -334,13 +351,58 @@ body {
   display: flex;
   text-align: right;
   text-justify: center;
+  color: #073b2f;
+  padding-right: 90px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.motivo1 p{
   color: black;
-  padding-left: 25px;
-  margin-top: 15px;
+  text-justify: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }
 
 .titulo{
   display: flex;
   flex-direction: row;
   width: 350px;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- sobre nos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+.boxsobrenos{
+  width: 1000px;
+  height: 550px;
+}
+
+.boxsobrenos{
+  display: flex;
+  background-color: #335f4c;
+  width: 500px;
+  height: 550px;
+  border-radius: 0px 90px 90px 0px;
+  margin-top: 125px;
+}
+
+.boxsobrenos h3{
+  color: #073b2f;
+}
+
+.boxsobrenos p{
+  color: black;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+ width: 200px; 
+}
+
+
+.fotoequipe img{
+  display: flex;
+  margin-left: 250px;
+  border-radius: 50px;
+  margin-top: 50px;
 }
