@@ -3,6 +3,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
@@ -31,12 +32,44 @@ body {
 }
 
 .campo-input {
-  display: block;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
 }
 
 .campo-input label {
-  margin-left: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Inputs */
+.campo-input input,
+.campo-input select {
+  width: 220px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+  border: none;
+  background-color: #56715c;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  /* Removendo foco azul padrão */
+  outline: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  /* Cursor */
+  cursor: pointer;
+}
+
+/* Foco */
+.campo-input input:focus,
+.campo-input select:focus {
+  background-color: #e9f5ff;
+  color: #000;
+  border: 1px solid #007bff;
+  border-radius: 40px;
 }
 
 .titulo {
@@ -47,7 +80,6 @@ body {
   margin: 0px;
   text-align: left;
 }
-
 
 button {
   padding: 10px;
@@ -65,13 +97,6 @@ button {
   cursor: pointer;
 }
 
-input {
-  padding: 10px 20px;
-  border-radius: 40px;
-  border: none;
-  background-color: #56715c;
-}
-
 h1 {
   font-size: 24px;
 }
@@ -82,7 +107,6 @@ form {
   align-items: center;
   gap: 25px;
 }
-
 
 .imagem {
   border-radius: 0px 200px 200px 0px;
@@ -103,7 +127,6 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-
 .prestador {
   border: solid 1px #ffffff;
   color: #ffffff;
@@ -115,4 +138,20 @@ input[type="checkbox"] {
   margin-top: 130px;
   width: 400px;
   height: 400px;
+}
+
+/* Remover seta padrão do select no Chrome, Edge, Safari */
+.campo-input select::-webkit-dropdown-arrow {
+  display: none;
+}
+
+/* Forçar largura e aparência consistente para select */
+.campo-input select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3e%3cpath fill='white' d='M7 10L0 0h14z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 10px;
 }
