@@ -501,14 +501,15 @@ body {
 .footer-section h3,
 .footer-section h4 {
   margin-bottom: 10px;
-  font-weight: 500px;
+  font-weight: 300px;
+  line-height: 0.5;
 }
 
 .footer-section p,
 .footer-section ul {
   margin: 5px 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: white;
   justify-content: center;
   align-items: center;
@@ -521,6 +522,7 @@ body {
 
 .footer-section a {
   color: #fff;
+  line-height: 0.2;
   text-decoration: none;
 }
 
