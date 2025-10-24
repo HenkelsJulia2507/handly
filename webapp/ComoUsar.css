@@ -55,3 +55,7 @@ body {
   background-color: #34614D;
   margin: 0px;
 }
+
+.content p{
+  color: black;
+}

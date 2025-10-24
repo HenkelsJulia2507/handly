@@ -84,8 +84,10 @@ body {
 }
 
 .instagram {
-  font-size: 14px;
+  font-size: 15px;
   color: #ccc;
+  margin-left: 40px;
+  margin-top: 10px;
 }
 
 .imagem {
@@ -142,7 +144,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 
 .buttons button {
   display: inline-block;
@@ -258,7 +259,6 @@ body {
   align-items: center;
 }
 
-
 .circulo3{
   width: 200px;
   height: 100px;
@@ -335,6 +335,15 @@ body {
   margin-top: 20px;
 }
 
+.square1 img{
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
 .square2{
  
   background-color: #335f4c;
@@ -345,6 +354,15 @@ body {
   margin-top: 20px;
 }
 
+.square2 img{
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
 .square3{
  
   background-color: #335f4c;
@@ -353,6 +371,15 @@ body {
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 20px;
+}
+
+.square3 img{
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
 .titulo h4{
@@ -367,11 +394,12 @@ body {
 
 .motivo1 p{
   display: flex;
-  color: black;
+  color: rgb(97, 97, 97);
   text-justify: auto;
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin: 30px;
+  font-size: 18px;
 }
 
 .titulo{
@@ -481,6 +509,9 @@ body {
   margin: 5px 0;
   font-size: 15px;
   line-height: 1.6;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-section ul {
@@ -523,7 +554,11 @@ body {
 .footer-bottom p {
   font-size: 14px;
   color: #aaa;
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
 }
+
 
 
 
