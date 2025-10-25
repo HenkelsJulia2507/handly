@@ -9,11 +9,11 @@ exports.teste = (req, res) => {
 
 // Rota cadastro cliente
 exports.clientes = async (req, res) => {
-  const { nome, telefone, email, password } = req.body;
+  const { nome, telefone, estado, cidade,endereco, email, password } = req.body;
   try {
     await pool.query(
-      "INSERT INTO tabela_cliente (nome, telefone, email, senha) VALUES (?, ?, ?, ?)",
-      [nome, telefone, email, password]
+      "INSERT INTO tabela_cliente (nome, telefone, estado, cidade, endereco, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      [nome, telefone, estado, cidade, endereco, email, password]
     );
     res.json({ mensagem: "Cadastro realizado com sucesso!" });
   } catch (error) {
@@ -24,11 +24,11 @@ exports.clientes = async (req, res) => {
 
 // Rota cadastro prestadores
 exports.prestadores = async (req, res) => {
-  const { nome, telefone, email, password } = req.body;
+  const { nome, telefone, estado, cidade,endereco, email, password } = req.body;
   try {
     await pool.query(
-      "INSERT INTO tabela_prestador (nome, telefone, email, senha) VALUES (?, ?, ?, ?)",
-      [nome, telefone, email, password]
+      "INSERT INTO tabela_prestador (nome, telefone, estado, cidade, endereco, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      [nome, telefone, estado, cidade, endereco, email, password]
     );
     res.json({ mensagem: "Cadastro realizado com sucesso!" });
   } catch (error) {
