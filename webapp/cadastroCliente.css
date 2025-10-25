@@ -8,7 +8,10 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  overflow-y: auto;
+  margin: 0%;
+  padding: 0%;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   background-color: #7BA184;
@@ -25,26 +28,69 @@ body {
 }
 
 .formulario {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   width: 50%;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* rolagem suave */
 }
 
 .campo-input {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-  font-family: Arial, sans-serif;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: #000;
+}
+
+.campo-input input,
+.campo-input select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 .campo-input label {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
+  position: absolute;
+  left: 15px;
+  top: 14px;
+  color: #000000;
+  pointer-events: none;
+  display: flex;
 }
 
-/* Inputs */
+.campo-input .char {
+  display: inline-block;
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.05s);
+}
+
+.campo-input .input:focus + label .char,
+.campo-input .input:valid + label .char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: black;
+  padding: 0 2px;;
+  padding: 0 2px;
+}
+/* Mantém a cor personalizada mesmo com autofill do Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: #56715c !important; /* mesma cor que você definiu */
+  -webkit-text-fill-color: black !important; /* mantém o texto preto */
+  transition: background-color 5000s ease-in-out 0s; /* truque pra forçar a cor */
+  box-shadow: 0 0 0px 1000px #56715c inset !important; /* aplica a cor no fundo */
+}
+
+
 .campo-input input,
 .campo-input select {
   width: 220px;
@@ -54,22 +100,13 @@ body {
   border-radius: 40px;
   border: none;
   background-color: #56715c;
-  color: white;
+  color: black;
   font-family: 'Roboto', sans-serif;
   /* Removendo foco azul padrão */
   outline: none;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   /* Cursor */
   cursor: pointer;
-}
-
-/* Foco */
-.campo-input input:focus,
-.campo-input select:focus {
-  background-color: #e9f5ff;
-  color: #000;
-  border: 1px solid #007bff;
-  border-radius: 40px;
 }
 
 .titulo {
