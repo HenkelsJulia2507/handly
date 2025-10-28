@@ -84,8 +84,10 @@ body {
 }
 
 .instagram {
-  font-size: 14px;
+  font-size: 15px;
   color: #ccc;
+  margin-left: 40px;
+  margin-top: 10px;
 }
 
 .imagem {
@@ -143,7 +145,6 @@ body {
   justify-content: center;
 }
 
-
 .buttons button {
   display: inline-block;
   width: 270px;
@@ -165,6 +166,8 @@ h2 {
 a{
   color: white;
 }
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-  barras -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
 
 .barra2{
   width: 100%;
@@ -247,33 +250,311 @@ body {
   background: #0f2c1d no-repeat right; 
 }
 
-/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- divisória -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
 
-.circulo1{
-  width: 100px;
-  height: 100px;
-  background-color: #0f2c1d;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-}
-
-.circulo2{
-  width: 165px;
-  height: 100px;
-  background-color: #34614D;
-  border-radius: 50%;
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-  circulos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+.barra2{
+  width: 100% !important;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .circulo3{
   width: 200px;
-  height: 230px;
+  height: 100px;
   background-color: #7BA184;
-  border-radius: 50%;
+  border-radius: 0px 0px 200px 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.circulo2{
+  width: 165px;
+  height: 90px;
+  background-color: #34614D;
+  border-radius: 0px 0px 100px 100px;
+  justify-content: center;
+  align-items: center;
+  margin-top: -40px;
+  }
+
+.circulo1{
+  width: 135px;
+  height: 100px;
+  background-color: #0f2c1d;
+  border-radius: 0px 0px 90px 90px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: -34px;
+}
+
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- motivos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+
+.tresmotivos{
+  width: 100%;
+  height: 555px;
+  background-color: #7BA184;
+}
+
+.motivo1{
+  width: 350px;
+  height: 350px;
+  border-radius: 15px;
+  background-color: #D9D9D9;
+  margin: 20px;
+  border-left: 7px solid #335f4c;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.342);
+}
+
+.boxquadrado{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+}
+
+.tresmotivos h3{
+  text-align: center;
+  padding: 30px;
+  font-size: 28px;
+}
+
+.square1{
+
+  background-color: #335f4c;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.square1 img{
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.square2{
+ 
+  background-color: #335f4c;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.square2 img{
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.square3{
+ 
+  background-color: #335f4c;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.square3 img{
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.titulo h4{
+  display: flex;
+  text-align: justify;
+  text-justify: center;
+  color: #073b2f;
+  padding-left: 15px;
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.motivo1 p{
+  display: flex;
+  color: rgb(97, 97, 97);
+  text-justify: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  font-size: 18px;
+}
+
+.titulo{
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- sobre nos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+.sobrenos{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 650px;
+  margin-top: 90px;
+}
+
+.boxsobrenos{
+  display: flex;
+  width: 800px;
+  height: 550px;
+}
+
+.boxsobrenos{
+  display: flex;
+  background-color: #335f4c;
+  width: 900px;
+  height: 550px;
+  border-radius: 0px 90px 90px 0px;
+
+}
+
+.boxsobrenos h3{
+  display: flex;
+  color: #ffffff;
+  margin-left: 190px;
+  font-size: 33px;
+
+}
+
+.boxsobrenos p{
+  color: rgb(255, 255, 255);
+  margin-top: 30px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  width: 500px; 
+  font-size: 18px;
+}
+
+.fotoequipe img{
+  display: flex;
+  margin-left: 90px;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+.textosobrenos{
+  display: flex; 
+  flex-direction: column;
+  display: flex;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=- barras e rodape -=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+
+.barra01{
+  width: 100%;
+  display: flex;
+  height: 20px;
+  background-color: #7BA184;
+  margin: 0px;
+}
+
+.barra02{
+  width: 100%;
+  display: flex;
+  height: 20px;
+  background-color: #34614D;
+  margin: 0px;
+}
+
+.footer {
+  background-color: #0f2c1d;
+  width: 100%;
+  height: 15%;
+  padding: 50px 80px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-weight: 500px;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 5px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: white;
   justify-content: center;
   align-items: center;
 }
 
-/*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- motivos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.iconeinsta {
+  width: 18px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.logocustomizada img {
+  display: flex;
+  margin-left: 10px;
+  margin-top: 50px;
+  width: 500px;
+  height: 200px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #aaa;
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+}
