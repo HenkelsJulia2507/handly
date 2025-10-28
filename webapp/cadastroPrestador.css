@@ -3,6 +3,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
@@ -30,13 +31,45 @@ body {
     width: 50%;
 }
 
-.campo-input{
-    display: block;
-    text-align: left;
+.campo-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
 }
 
-.campo-input label{
-    margin-left: 15px;
+.campo-input label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Inputs */
+.campo-input input,
+.campo-input select {
+  width: 220px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+  border: none;
+  background-color: #56715c;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  /* Removendo foco azul padrão */
+  outline: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  /* Cursor */
+  cursor: pointer;
+}
+
+/* Foco */
+.campo-input input:focus,
+.campo-input select:focus {
+  background-color: #e9f5ff;
+  color: #000;
+  border: 1px solid #007bff;
+  border-radius: 40px;
 }
 
 .titulo{
@@ -108,4 +141,22 @@ p {
     margin-top: 130px;
     width: 700px;
     height: 400px;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+}
+/* Remover seta padrão do select no Chrome, Edge, Safari */
+.campo-input select::-webkit-dropdown-arrow {
+  display: none;
+}
+
+/* Forçar largura e aparência consistente para select */
+.campo-input select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3e%3cpath fill='white' d='M7 10L0 0h14z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 10px;
 }

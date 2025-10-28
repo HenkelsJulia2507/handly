@@ -59,7 +59,7 @@
       .then(data => {
         if (data.sucesso) {
           alert('Login realizado com sucesso!');
-          // Redirecionar para página após login
+          window.location.href = "tela1.html";
         } else {
           alert('Email ou senha inválidos.');
         }
