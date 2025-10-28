@@ -15,75 +15,31 @@
         <div class="formulario">
             <form id ="formPrestador">
                 <div class="titulo">
-                    <h1>Tem clientes te  esperando.</h1>
-                    <h1>Cadastre-se!</h1>
+                    <h1>Tem clientes te</h1>
+                    <h1> esperando. Cadastre-se!</h1>
                 </div>
 
                 <div class="campo-input">
-                    <label for="nome">Nome</label>
+                    <label for="nome">Nome</label><br>
                     <input type="text" id="nome" name="nome" required />
                 </div>
 
                 <div class="campo-input">
-                    <label for="telefone">Telefone</label>
+                    <label for="telefone">Telefone</label><br>
                     <input type="text" id="telefone" name="telefone" required />
                 </div>
 
                 <div class="campo-input">
-                    <label for="estado">Estado</label>
-                    <select id="estado" name="estado" required>
-                        <option value="">Selecione um estado</option>
-                        <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
-                        <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
-                        <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
-                        <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
-                        <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
-                        <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
-                        <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
-                        <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
-                        <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
-                    </select>
+                    <label for="email">E-mail</label><br>
+                    <input type="text" id="email" name="email" required/>
                 </div>
 
                 <div class="campo-input">
-                    <label for="cidade">Cidade</label>
-                    <select id="cidade" name="cidade" required disabled>
-                        <option value="">Selecione o estado primeiro</option>
-                    </select>
+                    <label for="password">Senha</label><br>
+                    <input type="password" id="password" name="password" required/>    
                 </div>
-
-                <div class="campo-input">
-                    <label for="endereco">Endereço</label>
-                    <input type="text" id="endereco" name="endereco" required/>
-                </div>
-
-                <div class="campo-input">
-                    <label for="especialidade">Especialidade</label>
-                    <input type="text" id="especialidade" name="especialidade" required />
-                </div>
-
-                
-                <div class="campo-input">
-                    <label for="descricao">Descrição</label>
-                    <input type="text" id="descricao" name="descricao" required />
-                </div>
-                <div class="campo-input">
-                    <label for="email">E-mail</label>
-                    <input type="text" id="email" name="email" required />
-                </div>
-
-                <div class="campo-input">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" required />
-                </div>
-
 
                 <p>
-                    <input type="checkbox" required />
-                    <span> Li e concordo com a</span>
-                    <a href="<br>#">Política de Privacidade</a> e os
-                    <a href="#">Termos de Uso</a>
-                    <br><br>
                     <button type="submit">Quero me cadastrar!</button>
                 </p>
                 <p>
@@ -100,74 +56,15 @@
     </div>
 </body>
 <script>
-     const cidadesPorEstado = {
-      AC: ['Rio Branco', 'Cruzeiro do Sul', 'Sena Madureira', 'Tarauacá'],
-      AL: ['Maceió', 'Arapiraca', 'Palmeira dos Índios', 'Penedo'],
-      AP: ['Macapá', 'Santana'],
-      AM: ['Manaus', 'Parintins', 'Itacoatiara'],
-      BA: ['Salvador', 'Feira de Santana', 'Vitória da Conquista'],
-      CE: ['Fortaleza', 'Juazeiro do Norte', 'Sobral'],
-      DF: ['Brasília'],
-      ES: ['Vitória', 'Vila Velha', 'Serra'],
-      GO: ['Goiânia', 'Aparecida de Goiânia', 'Anápolis'],
-      MA: ['São Luís', 'Imperatriz', 'Caxias'],
-      MT: ['Cuiabá', 'Várzea Grande', 'Rondonópolis'],
-      MS: ['Campo Grande', 'Dourados'],
-      MG: ['Belo Horizonte', 'Uberlândia', 'Contagem'],
-      PA: ['Belém', 'Ananindeua', 'Santarém'],
-      PB: ['João Pessoa', 'Campina Grande'],
-      PR: ['Curitiba', 'Londrina', 'Maringá'],
-      PE: ['Recife', 'Jaboatão dos Guararapes', 'Olinda'],
-      PI: ['Teresina', 'Parnaíba'],
-      RJ: ['Rio de Janeiro', 'São Gonçalo', 'Duque de Caxias'],
-      RN: ['Natal', 'Mossoró'],
-      RS: ['Porto Alegre', 'Caxias do Sul', 'Pelotas'],
-      RO: ['Porto Velho', 'Ji-Paraná'],
-      RR: ['Boa Vista'],
-      SC: ['Florianópolis', 'Joinville', 'Blumenau'],
-      SP: ['São Paulo', 'Guarulhos', 'Campinas'],
-      SE: ['Aracaju'],
-      TO: ['Palmas', 'Araguaína']
-    };
-
-    document.getElementById('estado').addEventListener('change', function() {
-      const estadoSelecionado = this.value;
-      const cidadeSelect = document.getElementById('cidade');
-      cidadeSelect.innerHTML = '';
-
-      if (estadoSelecionado && cidadesPorEstado[estadoSelecionado]) {
-        cidadeSelect.disabled = false;
-        const optionPadrao = document.createElement('option');
-        optionPadrao.value = '';
-        optionPadrao.textContent = 'Selecione uma cidade';
-        cidadeSelect.appendChild(optionPadrao);
-
-        cidadesPorEstado[estadoSelecionado].forEach(cidade => {
-          const option = document.createElement('option');
-          option.value = cidade;
-          option.textContent = cidade;
-          cidadeSelect.appendChild(option);
-        });
-      } else {
-        cidadeSelect.disabled = true;
-        const optionPadrao = document.createElement('option');
-        optionPadrao.value = '';
-        optionPadrao.textContent = 'Selecione o estado primeiro';
-        cidadeSelect.appendChild(optionPadrao);
-      }
-    });
     document.getElementById('formPrestador').addEventListener('submit', function(e) {
         e.preventDefault();
 
         const dados = {
-        nome: this.nome.value,
-        telefone: this.telefone.value,
-        estado: this.estado.value,
-        cidade: this.cidade.value,
-        endereco: this.endereco.value,
-        email: this.email.value,
-        password: this.password.value,
-      };
+            nome: this.nome.value,
+            telefone: this.telefone.value,
+            email: this.email.value,
+            password: this.password.value,
+        };
 
         fetch('http://localhost:3000/salvarPrestador', {
             method: 'POST',
