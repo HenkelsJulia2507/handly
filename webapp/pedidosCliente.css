@@ -17,7 +17,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    background-color: var(--color-background);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -52,19 +52,44 @@ body {
     letter-spacing: 2px;
 }
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 5px;
+    width: 350px;
+}
+
+.search-bar input {
+    border: none;
+    padding: 5px 10px;
+    flex-grow: 1;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-text-subtle);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
 .user-icon {
     width: 40px; 
     height: 40px; 
     background-color: #fff;
     border-radius: 50%;
-    margin-right: -250px;
 }
 
 .container {
     width: 100%;
-    /*max-width: 1000px;  Mantém a largura máxima para centralização */
+    max-width: 1000px; /* Mantém a largura máxima para centralização */
     background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* Adiciona margem superior para espaçar do header */
+    margin-top: 20px; 
     padding: 40px 30px;
 }
 

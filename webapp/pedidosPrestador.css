@@ -18,7 +18,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    background-color: var(--color-background);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -83,7 +83,6 @@ body {
     background-color: #fff;
     border-radius: 50%;
     border: 2px solid #fff;
-    margin-right: -250px;
 }
 /* ------------------------------------------------- */
 
@@ -92,6 +91,7 @@ body {
     width: 100%;
     max-width: 1000px;
     background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     margin: 20px auto 0 auto;
     padding: 40px 30px;
     

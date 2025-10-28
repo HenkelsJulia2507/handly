@@ -41,11 +41,11 @@ body {
 .user-icon-placeholder {
     width: 40px;
     height: 40px;
-    background-color: #fff;
+    background-color: var(--color-text-light);
     border-radius: 50%;
 }
 
-/* Tela de Solicitação de Orçamento */
+/* --- Tela de Solicitação de Orçamento --- */
 .request-screen {
     width: 100%;
     padding: 50px 0;
@@ -59,7 +59,7 @@ body {
 }
 
 .request-container h1 {
-    color: var(--color-text-dark); 
+    color: var(--color-text-dark); /* Cor do texto "solicite seu orçamento" */
     font-size: 28px;
     font-weight: normal;
     text-align: center;
@@ -74,7 +74,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Layout Campos e Calendário */
+/* Layout de Duas Colunas (Campos e Calendário) */
 .main-content {
     display: flex;
     gap: 40px;

@@ -3,15 +3,11 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
 }
 
 body {
   width: 100vw;
-  height: auto;
-  overflow-y: auto;
-  margin: 0%;
-  padding: 0%;
+  height: 100vh;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   background-color: #7BA184;
@@ -28,85 +24,19 @@ body {
 }
 
 .formulario {
-  height: 100vh;
-  overflow-y: auto;
-  padding: 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
   width: 50%;
-  box-sizing: border-box;
-  scroll-behavior: smooth; /* rolagem suave */
 }
 
 .campo-input {
-  position: relative;
-  font-family: 'Roboto', sans-serif;
-  margin-bottom: 50px;
-  font-weight: bold;
-  color: #000;
-}
-
-.campo-input input,
-.campo-input select {
-  width: 100%;
-  padding: 12px 15px;
-  font-size: 16px;
-  box-sizing: border-box;
+  display: block;
+  text-align: left;
 }
 
 .campo-input label {
-  position: absolute;
-  left: 15px;
-  top: 14px;
-  color: #000000;
-  pointer-events: none;
-  display: flex;
-}
-
-.campo-input .char {
-  display: inline-block;
-  transition: 0.2s ease all;
-  transition-delay: calc(var(--index) * 0.05s);
-}
-
-.campo-input .input:focus + label .char,
-.campo-input .input:valid + label .char {
-  transform: translateY(-20px);
-  font-size: 14px;
-  color: black;
-  padding: 0 2px;;
-  padding: 0 2px;
-}
-/* Mantém a cor personalizada mesmo com autofill do Chrome */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  background-color: #56715c !important; /* mesma cor que você definiu */
-  -webkit-text-fill-color: black !important; /* mantém o texto preto */
-  transition: background-color 5000s ease-in-out 0s; /* truque pra forçar a cor */
-  box-shadow: 0 0 0px 1000px #56715c inset !important; /* aplica a cor no fundo */
-}
-
-
-.campo-input input,
-.campo-input select {
-  width: 220px;
-  box-sizing: border-box;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 40px;
-  border: none;
-  background-color: #56715c;
-  color: black;
-  font-family: 'Roboto', sans-serif;
-  /* Removendo foco azul padrão */
-  outline: none;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  /* Cursor */
-  cursor: pointer;
+  margin-left: 15px;
 }
 
 .titulo {
@@ -117,6 +47,7 @@ input:-webkit-autofill:active {
   margin: 0px;
   text-align: left;
 }
+
 
 button {
   padding: 10px;
@@ -134,6 +65,13 @@ button {
   cursor: pointer;
 }
 
+input {
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: none;
+  background-color: #56715c;
+}
+
 h1 {
   font-size: 24px;
 }
@@ -144,6 +82,7 @@ form {
   align-items: center;
   gap: 25px;
 }
+
 
 .imagem {
   border-radius: 0px 200px 200px 0px;
@@ -164,6 +103,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+
 .prestador {
   border: solid 1px #ffffff;
   color: #ffffff;
@@ -175,20 +115,4 @@ input[type="checkbox"] {
   margin-top: 130px;
   width: 400px;
   height: 400px;
-}
-
-/* Remover seta padrão do select no Chrome, Edge, Safari */
-.campo-input select::-webkit-dropdown-arrow {
-  display: none;
-}
-
-/* Forçar largura e aparência consistente para select */
-.campo-input select {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3e%3cpath fill='white' d='M7 10L0 0h14z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 10px;
 }
