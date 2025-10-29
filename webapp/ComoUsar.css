@@ -10,12 +10,22 @@ body {
 }
 
 .top-bar-como-usar {
-  background-color: #0b2a1c;
+  /*background-color: #0b2a1c;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 40px;
+  padding: 12px 40px;*/
+    background-color: #193D2A;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .logo img {
@@ -68,4 +78,19 @@ body {
 .p1 p {
   color: black;
   line-height: 2.0;
+  margin: 0px 50px 20px 50px;
+  text-align: justify;
+}
+
+.content h2{
+  margin-left: 50px;
+}
+
+.content p{
+  margin: 0px 50px 0px 50px;
+  text-align: justify;
+}
+
+ol {
+  margin: 0px 50px 0px 50px;  
 }
