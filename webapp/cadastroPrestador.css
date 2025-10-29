@@ -44,7 +44,6 @@ body {
   color: #333;
 }
 
-/* Inputs */
 .campo-input input,
 .campo-input select {
   width: 220px;
@@ -56,14 +55,11 @@ body {
   background-color: #56715c;
   color: white;
   font-family: 'Roboto', sans-serif;
-  /* Removendo foco azul padrão */
   outline: none;
   transition: background-color 0.3s ease, border-color 0.3s ease;
-  /* Cursor */
   cursor: pointer;
 }
 
-/* Foco */
 .campo-input input:focus,
 .campo-input select:focus {
   background-color: #e9f5ff;
@@ -145,12 +141,11 @@ p {
 input[type="checkbox"] {
   cursor: pointer;
 }
-/* Remover seta padrão do select no Chrome, Edge, Safari */
+
 .campo-input select::-webkit-dropdown-arrow {
   display: none;
 }
 
-/* Forçar largura e aparência consistente para select */
 .campo-input select {
   appearance: none;
   -moz-appearance: none;

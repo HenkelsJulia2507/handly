@@ -326,10 +326,9 @@ body {
 }
 
 .square1{
-
   background-color: #335f4c;
-  width: 75px;
-  height: 75px;
+  width: 75px  !important;
+  height: 75px !important;
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 20px;
@@ -364,10 +363,9 @@ body {
 }
 
 .square3{
- 
   background-color: #335f4c;
-  width: 75px;
-  height: 75px;
+  width: 75px !important;
+  height: 75px !important;
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 20px;
@@ -385,11 +383,11 @@ body {
 .titulo h4{
   display: flex;
   text-align: justify;
-  text-justify: center;
   color: #073b2f;
-  padding-left: 15px;
+  padding-left: 10px;
   margin-top: 40px;
   font-size: 18px;
+  width: 200px;
 }
 
 .motivo1 p{
@@ -405,7 +403,7 @@ body {
 .titulo{
   display: flex;
   flex-direction: row;
-  width: 500px;
+  width: 300px;
 }
 
 /*-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=- sobre nos -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-*/
