@@ -23,7 +23,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: #0f2c1d;
+  background: #133b26;
 }
 
 .logo {
@@ -173,7 +173,7 @@ a{
   width: 100%;
   display: flex;
   height: 20px;
-  background-color: #34614D;
+  background-color: #7BA184;
   margin: 0px;
 }
 
@@ -181,7 +181,7 @@ a{
   width: 100%;
   display: flex;
   height: 20px;
-  background-color: #7BA184;
+  background-color: #34614D;
   margin: 0px;
 }
 
@@ -193,7 +193,7 @@ a{
 }
 
 .categorias h2 {
-  color: #073b2f;
+  color: #ffffff;
   font-size: 1.8rem;
   margin-bottom: 40px;
 }
@@ -255,7 +255,7 @@ a{
 .circulo3{
   width: 200px;
   height: 100px;
-  background-color: #7BA184;
+  background-color: #34614D;
   border-radius: 0px 0px 200px 200px;
   display: flex;
   justify-content: center;
@@ -266,7 +266,7 @@ a{
 .circulo2{
   width: 165px;
   height: 90px;
-  background-color: #34614D;
+  background-color: #7BA184;
   border-radius: 0px 0px 100px 100px;
   justify-content: center;
   align-items: center;
@@ -276,7 +276,7 @@ a{
 .circulo1{
   width: 135px;
   height: 100px;
-  background-color: #0f2c1d;
+  background-color: #133b26;
   border-radius: 0px 0px 90px 90px;
   justify-content: center;
   align-items: center;

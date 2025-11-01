@@ -29,7 +29,7 @@ CREATE TABLE `tabela_prestador` (
   `telefone` varchar(20) DEFAULT NULL,
   `endereco` varchar(150) DEFAULT NULL,
   `cidade` varchar(100) DEFAULT NULL,
-  `estado` varchar(2) DEFAULT NULL,
+  `estado` varchar(100) DEFAULT NULL,
   `especialidade` varchar(100) DEFAULT NULL,
   `descricao` varchar(200) DEFAULT NULL,
   `senha` varchar(255) NOT NULL,

@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '..', 'webapp')));
 //Rota pagina inicial
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'webapp', 'tela1.html'));
+    res.sendFile(path.join(__dirname, '..', 'webapp', 'telaInicio.html'));
 });
 
 app.use("/", routes)

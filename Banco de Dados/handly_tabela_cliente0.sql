@@ -29,7 +29,7 @@ CREATE TABLE `tabela_cliente` (
   `telefone` varchar(20) DEFAULT NULL,
   `endereco` varchar(150) DEFAULT NULL,
   `cidade` varchar(100) DEFAULT NULL,
-  `estado` varchar(2) DEFAULT NULL,
+  `estado` varchar(100) DEFAULT NULL,
   `senha` varchar(255) NOT NULL,
   PRIMARY KEY (`id_cliente`,`email`,`senha`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

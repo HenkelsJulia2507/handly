@@ -181,30 +181,44 @@
       }
     });
 
-    document.getElementById('formCadastro').addEventListener('submit', function(e) {
-      e.preventDefault();
+    document.getElementById('formCadastro').addEventListener('submit', async function(e) {
+  e.preventDefault();
 
-      const dados = {
-        nome: this.nome.value,
-        telefone: this.telefone.value,
-        estado: this.estado.value,
-        cidade: this.cidade.value,
-        endereco: this.endereco.value,
-        email: this.email.value,
-        password: this.password.value,
-      };
+  const estadoId = this.estado.value;
+  const cidadeId = this.cidade.value;
 
-      fetch('http://localhost:3000/salvarClientes', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dados),
-      })
-      .then(res => res.json())
-      .then(data => {
-        alert(data.mensagem || 'Cadastro realizado com sucesso!');
-        window.location.href = "loginCliente.html";
-      })
-      .catch(() => alert('Erro ao cadastrar'));
+  try {
+    const estadoRes = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoId}`);
+    const estadoDados = await estadoRes.json();
+    const nomeEstado = estadoDados.nome;
+
+    const cidadeRes = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${cidadeId}`);
+    const cidadeDados = await cidadeRes.json();
+    const nomeCidade = cidadeDados.nome;
+
+    const dados = {
+      nome: this.nome.value,
+      telefone: this.telefone.value,
+      estado: nomeEstado, 
+      cidade: nomeCidade,
+      endereco: this.endereco.value,
+      email: this.email.value,
+      password: this.password.value,
+    };
+
+    const res = await fetch('http://localhost:3000/salvarClientes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados),
     });
+
+    const data = await res.json();
+    alert(data.mensagem || 'Cadastro realizado com sucesso!');
+    window.location.href = "loginCliente.html";
+  } catch (error) {
+    alert('Erro ao cadastrar: ' + error.message);
+  }
+  });
+
   </script>
 </html>
