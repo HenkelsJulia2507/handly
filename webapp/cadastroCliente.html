@@ -46,15 +46,6 @@
         <div class="campo-input">
           <select id="estado" name="estado" required>
             <option value="">Selecione um estado</option>
-            <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
-            <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
-            <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
-            <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
-            <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
-            <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
-            <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
-            <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
-            <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
           </select>
         </div>
 
@@ -115,42 +106,53 @@
   </div>
 </body>
   <script>
-    const cidadesPorEstado = {
-      AC: ['Rio Branco', 'Cruzeiro do Sul', 'Sena Madureira', 'Tarauacá'],
-      AL: ['Maceió', 'Arapiraca', 'Palmeira dos Índios', 'Penedo'],
-      AP: ['Macapá', 'Santana'],
-      AM: ['Manaus', 'Parintins', 'Itacoatiara'],
-      BA: ['Salvador', 'Feira de Santana', 'Vitória da Conquista'],
-      CE: ['Fortaleza', 'Juazeiro do Norte', 'Sobral'],
-      DF: ['Brasília'],
-      ES: ['Vitória', 'Vila Velha', 'Serra'],
-      GO: ['Goiânia', 'Aparecida de Goiânia', 'Anápolis'],
-      MA: ['São Luís', 'Imperatriz', 'Caxias'],
-      MT: ['Cuiabá', 'Várzea Grande', 'Rondonópolis'],
-      MS: ['Campo Grande', 'Dourados'],
-      MG: ['Belo Horizonte', 'Uberlândia', 'Contagem'],
-      PA: ['Belém', 'Ananindeua', 'Santarém'],
-      PB: ['João Pessoa', 'Campina Grande'],
-      PR: ['Curitiba', 'Londrina', 'Maringá'],
-      PE: ['Recife', 'Jaboatão dos Guararapes', 'Olinda'],
-      PI: ['Teresina', 'Parnaíba'],
-      RJ: ['Rio de Janeiro', 'São Gonçalo', 'Duque de Caxias'],
-      RN: ['Natal', 'Mossoró'],
-      RS: ['Porto Alegre', 'Caxias do Sul', 'Pelotas'],
-      RO: ['Porto Velho', 'Ji-Paraná'],
-      RR: ['Boa Vista'],
-      SC: ['Florianópolis', 'Joinville', 'Blumenau'],
-      SP: ['São Paulo', 'Guarulhos', 'Campinas'],
-      SE: ['Aracaju'],
-      TO: ['Palmas', 'Araguaína']
-    };
+  const estadoSelect = document.getElementById('estado');
+  const cidadeSelect = document.getElementById('cidade');
+
+  // Carregar estados ao iniciar a página
+  fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
+  .then(res => res.json())
+  .then(estados => {
+  estados.sort((a, b) => a.nome.localeCompare(b.nome));
+  estados.forEach(estado => {
+    const option = document.createElement('option');
+    option.value = estado.id; 
+    option.textContent = estado.nome;
+    estadoSelect.appendChild(option);
+  });
+  });
+
+  estadoSelect.addEventListener('change', () => {
+  const estadoId = estadoSelect.value;
+  cidadeSelect.innerHTML = ''; 
+
+  if (!estadoId) {
+  cidadeSelect.disabled = true;
+  cidadeSelect.innerHTML = '<option value="">Selecione o estado primeiro</option>';
+  return;
+  }
+
+  cidadeSelect.disabled = false;
+
+  fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoId}/municipios`)
+  .then(res => res.json())
+  .then(cidades => {
+    cidades.forEach(cidade => {
+      const option = document.createElement('option');
+      option.value = cidade.id;
+      option.textContent = cidade.nome;
+      cidadeSelect.appendChild(option);
+    });
+  });
+  });
+
     document.getElementById("btnPrestador").addEventListener("click", function(e) {
-      e.preventDefault(); // impede mudar a página imediatamente
+      e.preventDefault(); 
       document.body.classList.add("slide-out");
 
       setTimeout(() => {
         window.location.href = "cadastroPrestador.html";
-      }, 300); // tempo igual ao da animação
+      }, 300);
     });
     document.getElementById('estado').addEventListener('change', function() {
       const estadoSelecionado = this.value;

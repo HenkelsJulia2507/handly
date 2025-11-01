@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<xmlns:th="https://thymeleaf.org" />
-<xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" />
+<xmlns:th="https: //thymeleaf.org" />
+<xmlns:layout="http: //www.ultraq.net.nz/thymeleaf/layout" />
 
 <head>
     <meta charset="UTF-8">
@@ -13,126 +13,117 @@
 <body>
     <div class="container">
         <div class="formulario">
-            <form id ="formPrestador">
+            <form id="formPrestador">
                 <div class="titulo">
-                    <h1>Tem clientes te  esperando.</h1>
+                    <h1>Tem clientes te esperando.</h1>
                     <h1>Cadastre-se!</h1>
                 </div>
 
                 <div class="campo-input">
-                <input type="text" id="nome" name="nome" required class="input" />
-                <label for="nome">
-                    <span class="char" style="--index:0">N</span>
-                    <span class="char" style="--index:1">o</span>
-                    <span class="char" style="--index:2">m</span>
-                    <span class="char" style="--index:3">e</span>
-                </label>
+                    <input type="text" id="nome" name="nome" required class="input" />
+                    <label for="nome">
+                        <span class="char" style="--index:0">N</span>
+                        <span class="char" style="--index:1">o</span>
+                        <span class="char" style="--index:2">m</span>
+                        <span class="char" style="--index:3">e</span>
+                    </label>
                 </div>
 
                 <div class="campo-input">
-                <input type="text" id="telefone" name="telefone" required class="input" />
-                <label for="telefone">
-                    <span class="char" style="--index:0">T</span>
-                    <span class="char" style="--index:1">e</span>
-                    <span class="char" style="--index:2">l</span>
-                    <span class="char" style="--index:3">e</span>
-                    <span class="char" style="--index:4">f</span>
-                    <span class="char" style="--index:5">o</span>
-                    <span class="char" style="--index:6">n</span>
-                    <span class="char" style="--index:7">e</span>
-                </label>
+                    <input type="text" id="telefone" name="telefone" required class="input" />
+                    <label for="telefone">
+                        <span class="char" style="--index:0">T</span>
+                        <span class="char" style="--index:1">e</span>
+                        <span class="char" style="--index:2">l</span>
+                        <span class="char" style="--index:3">e</span>
+                        <span class="char" style="--index:4">f</span>
+                        <span class="char" style="--index:5">o</span>
+                        <span class="char" style="--index:6">n</span>
+                        <span class="char" style="--index:7">e</span>
+                    </label>
                 </div>
 
                 <div class="campo-input">
                     <select id="estado" name="estado" required>
                         <option value="">Selecione um estado</option>
-                        <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
-                        <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
-                        <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
-                        <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
-                        <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
-                        <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
-                        <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
-                        <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
-                        <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
                     </select>
                 </div>
 
                 <div class="campo-input">
-                <select id="cidade" name="cidade" required disabled class="input">
-                    <option value="">Selecione o estado primeiro</option>
-                </select>
+                    <select id="cidade" name="cidade" required disabled class="input">
+                        <option value="">Selecione o estado primeiro</option>
+                    </select>
                 </div>
 
                 <div class="campo-input">
-                <input type="text" id="endereco" name="endereco" required class="input" />
-                <label for="endereco">
-                    <span class="char" style="--index:0">E</span>
-                    <span class="char" style="--index:1">n</span>
-                    <span class="char" style="--index:2">d</span>
-                    <span class="char" style="--index:3">e</span>
-                    <span class="char" style="--index:4">r</span>
-                    <span class="char" style="--index:5">e</span>
-                    <span class="char" style="--index:6">ç</span>
-                    <span class="char" style="--index:7">o</span>
-                </label>
+                    <input type="text" id="endereco" name="endereco" required class="input" />
+                    <label for="endereco">
+                        <span class="char" style="--index:0">E</span>
+                        <span class="char" style="--index:1">n</span>
+                        <span class="char" style="--index:2">d</span>
+                        <span class="char" style="--index:3">e</span>
+                        <span class="char" style="--index:4">r</span>
+                        <span class="char" style="--index:5">e</span>
+                        <span class="char" style="--index:6">ç</span>
+                        <span class="char" style="--index:7">o</span>
+                    </label>
                 </div>
 
                 <div class="campo-input">
-                <input type="text" id="especialidade" name="especialidade" required class="input" />
-                <label for="endereco">
-                    <span class="char" style="--index:0">E</span>
-                    <span class="char" style="--index:1">s</span>
-                    <span class="char" style="--index:2">p</span>
-                    <span class="char" style="--index:3">e</span>
-                    <span class="char" style="--index:4">c</span>
-                    <span class="char" style="--index:5">i</span>
-                    <span class="char" style="--index:6">a</span>
-                    <span class="char" style="--index:7">l</span>
-                    <span class="char" style="--index:8">i</span>
-                    <span class="char" style="--index:9">d</span>
-                    <span class="char" style="--index:10">a</span>
-                    <span class="char" style="--index:11">d</span>
-                    <span class="char" style="--index:12">e</span>
-                </label>
+                    <input type="text" id="especialidade" name="especialidade" required class="input" />
+                    <label for="endereco">
+                        <span class="char" style="--index:0">E</span>
+                        <span class="char" style="--index:1">s</span>
+                        <span class="char" style="--index:2">p</span>
+                        <span class="char" style="--index:3">e</span>
+                        <span class="char" style="--index:4">c</span>
+                        <span class="char" style="--index:5">i</span>
+                        <span class="char" style="--index:6">a</span>
+                        <span class="char" style="--index:7">l</span>
+                        <span class="char" style="--index:8">i</span>
+                        <span class="char" style="--index:9">d</span>
+                        <span class="char" style="--index:10">a</span>
+                        <span class="char" style="--index:11">d</span>
+                        <span class="char" style="--index:12">e</span>
+                    </label>
                 </div>
 
                 <div class="campo-input">
-                <input type="text" id="descricao" name="descricao" required class="input" />
-                <label for="endereco">
-                    <span class="char" style="--index:0">D</span>
-                    <span class="char" style="--index:1">e</span>
-                    <span class="char" style="--index:2">s</span>
-                    <span class="char" style="--index:3">c</span>
-                    <span class="char" style="--index:4">r</span>
-                    <span class="char" style="--index:5">i</span>
-                    <span class="char" style="--index:6">ç</span>
-                    <span class="char" style="--index:7">ã</span>
-                    <span class="char" style="--index:8">o</span>
-                </label>
+                    <input type="text" id="descricao" name="descricao" required class="input" />
+                    <label for="endereco">
+                        <span class="char" style="--index:0">D</span>
+                        <span class="char" style="--index:1">e</span>
+                        <span class="char" style="--index:2">s</span>
+                        <span class="char" style="--index:3">c</span>
+                        <span class="char" style="--index:4">r</span>
+                        <span class="char" style="--index:5">i</span>
+                        <span class="char" style="--index:6">ç</span>
+                        <span class="char" style="--index:7">ã</span>
+                        <span class="char" style="--index:8">o</span>
+                    </label>
                 </div>
 
                 <div class="campo-input">
-                <input type="text" id="email" name="email" required class="input" />
-                <label for="email">
-                    <span class="char" style="--index:0">E</span>
-                    <span class="char" style="--index:1">-</span>
-                    <span class="char" style="--index:2">m</span>
-                    <span class="char" style="--index:3">a</span>
-                    <span class="char" style="--index:4">i</span>
-                    <span class="char" style="--index:5">l</span>
-                </label>
+                    <input type="text" id="email" name="email" required class="input" />
+                    <label for="email">
+                        <span class="char" style="--index:0">E</span>
+                        <span class="char" style="--index:1">-</span>
+                        <span class="char" style="--index:2">m</span>
+                        <span class="char" style="--index:3">a</span>
+                        <span class="char" style="--index:4">i</span>
+                        <span class="char" style="--index:5">l</span>
+                    </label>
                 </div>
 
                 <div class="campo-input">
-                <input type="password" id="password" name="password" required class="input" />
-                <label for="password">
-                    <span class="char" style="--index:0">S</span>
-                    <span class="char" style="--index:1">e</span>
-                    <span class="char" style="--index:2">n</span>
-                    <span class="char" style="--index:3">h</span>
-                    <span class="char" style="--index:4">a</span>
-                </label>
+                    <input type="password" id="password" name="password" required class="input" />
+                    <label for="password">
+                        <span class="char" style="--index:0">S</span>
+                        <span class="char" style="--index:1">e</span>
+                        <span class="char" style="--index:2">n</span>
+                        <span class="char" style="--index:3">h</span>
+                        <span class="char" style="--index:4">a</span>
+                    </label>
                 </div>
 
 
@@ -158,92 +149,103 @@
     </div>
 </body>
 <script>
-     const cidadesPorEstado = {
-      AC: ['Rio Branco', 'Cruzeiro do Sul', 'Sena Madureira', 'Tarauacá'],
-      AL: ['Maceió', 'Arapiraca', 'Palmeira dos Índios', 'Penedo'],
-      AP: ['Macapá', 'Santana'],
-      AM: ['Manaus', 'Parintins', 'Itacoatiara'],
-      BA: ['Salvador', 'Feira de Santana', 'Vitória da Conquista'],
-      CE: ['Fortaleza', 'Juazeiro do Norte', 'Sobral'],
-      DF: ['Brasília'],
-      ES: ['Vitória', 'Vila Velha', 'Serra'],
-      GO: ['Goiânia', 'Aparecida de Goiânia', 'Anápolis'],
-      MA: ['São Luís', 'Imperatriz', 'Caxias'],
-      MT: ['Cuiabá', 'Várzea Grande', 'Rondonópolis'],
-      MS: ['Campo Grande', 'Dourados'],
-      MG: ['Belo Horizonte', 'Uberlândia', 'Contagem'],
-      PA: ['Belém', 'Ananindeua', 'Santarém'],
-      PB: ['João Pessoa', 'Campina Grande'],
-      PR: ['Curitiba', 'Londrina', 'Maringá'],
-      PE: ['Recife', 'Jaboatão dos Guararapes', 'Olinda'],
-      PI: ['Teresina', 'Parnaíba'],
-      RJ: ['Rio de Janeiro', 'São Gonçalo', 'Duque de Caxias'],
-      RN: ['Natal', 'Mossoró'],
-      RS: ['Porto Alegre', 'Caxias do Sul', 'Pelotas'],
-      RO: ['Porto Velho', 'Ji-Paraná'],
-      RR: ['Boa Vista'],
-      SC: ['Florianópolis', 'Joinville', 'Blumenau'],
-      SP: ['São Paulo', 'Guarulhos', 'Campinas'],
-      SE: ['Aracaju'],
-      TO: ['Palmas', 'Araguaína']
-    };
+    const estadoSelect = document.getElementById('estado');
+    const cidadeSelect = document.getElementById('cidade');
 
-    document.getElementById("btnCliente").addEventListener("click", function(e) {
+
+    fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
+        .then(res => res.json())
+        .then(estados => {
+            estados.sort((a, b) => a.nome.localeCompare(b.nome));
+            estados.forEach(estado => {
+                const option = document.createElement('option');
+                option.value = estado.id; 
+                option.textContent = estado.nome;
+                estadoSelect.appendChild(option);
+            });
+        });
+
+    estadoSelect.addEventListener('change', () => {
+        const estadoId = estadoSelect.value;
+        cidadeSelect.innerHTML = '';
+
+        if (!estadoId) {
+            cidadeSelect.disabled = true;
+            cidadeSelect.innerHTML = '<option value="">Selecione o estado primeiro</option>';
+            return;
+        }
+
+        cidadeSelect.disabled = false;
+
+        fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoId}/municipios`)
+            .then(res => res.json())
+            .then(cidades => {
+                cidades.forEach(cidade => {
+                    const option = document.createElement('option');
+                    option.value = cidade.id;
+                    option.textContent = cidade.nome;
+                    cidadeSelect.appendChild(option);
+                });
+            });
+    });
+
+
+    document.getElementById("btnCliente").addEventListener("click", function (e) {
         e.preventDefault();
-        document.body.classList.add("slide-out-left"); // animação de saída pro lado oposto
+        document.body.classList.add("slide-out-left");
 
         setTimeout(() => {
             window.location.href = "cadastroCliente.html";
         }, 300);
     });
 
-    document.getElementById('estado').addEventListener('change', function() {
-      const estadoSelecionado = this.value;
-      const cidadeSelect = document.getElementById('cidade');
-      cidadeSelect.innerHTML = '';
+    document.getElementById('estado').addEventListener('change', function () {
+        const estadoSelecionado = this.value;
+        const cidadeSelect = document.getElementById('cidade');
+        cidadeSelect.innerHTML = '';
 
-      if (estadoSelecionado && cidadesPorEstado[estadoSelecionado]) {
-        cidadeSelect.disabled = false;
-        const optionPadrao = document.createElement('option');
-        optionPadrao.value = '';
-        optionPadrao.textContent = 'Selecione uma cidade';
-        cidadeSelect.appendChild(optionPadrao);
+        if (estadoSelecionado && cidadesPorEstado[estadoSelecionado]) {
+            cidadeSelect.disabled = false;
+            const optionPadrao = document.createElement('option');
+            optionPadrao.value = '';
+            optionPadrao.textContent = 'Selecione uma cidade';
+            cidadeSelect.appendChild(optionPadrao);
 
-        cidadesPorEstado[estadoSelecionado].forEach(cidade => {
-          const option = document.createElement('option');
-          option.value = cidade;
-          option.textContent = cidade;
-          cidadeSelect.appendChild(option);
-        });
-      } else {
-        cidadeSelect.disabled = true;
-        const optionPadrao = document.createElement('option');
-        optionPadrao.value = '';
-        optionPadrao.textContent = 'Selecione o estado primeiro';
-        cidadeSelect.appendChild(optionPadrao);
-      }
+            cidadesPorEstado[estadoSelecionado].forEach(cidade => {
+                const option = document.createElement('option');
+                option.value = cidade;
+                option.textContent = cidade;
+                cidadeSelect.appendChild(option);
+            });
+        } else {
+            cidadeSelect.disabled = true;
+            const optionPadrao = document.createElement('option');
+            optionPadrao.value = '';
+            optionPadrao.textContent = 'Selecione o estado primeiro';
+            cidadeSelect.appendChild(optionPadrao);
+        }
     });
-    document.getElementById('formPrestador').addEventListener('submit', function(e) {
+    document.getElementById('formPrestador').addEventListener('submit', function (e) {
         e.preventDefault();
 
         const dados = {
-        nome: this.nome.value,
-        telefone: this.telefone.value,
-        estado: this.estado.value,
-        cidade: this.cidade.value,
-        endereco: this.endereco.value,
-        email: this.email.value,
-        password: this.password.value,
-      };
+            nome: this.nome.value,
+            telefone: this.telefone.value,
+            estado: this.estado.value,
+            cidade: this.cidade.value,
+            endereco: this.endereco.value,
+            email: this.email.value,
+            password: this.password.value,
+        };
 
         fetch('http://localhost:3000/salvarPrestador', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dados)
         })
-        .then(res => res.json())
-        .then(data => alert(data.mensagem || 'Cadastro realizado com sucesso!'))
-        .catch(() => alert('Erro ao cadastrar'));
+            .then(res => res.json())
+            .then(data => alert(data.mensagem || 'Cadastro realizado com sucesso!'))
+            .catch(() => alert('Erro ao cadastrar'));
     });
 </script>
 </html>
