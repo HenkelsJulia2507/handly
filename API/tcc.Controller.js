@@ -2,11 +2,6 @@
 const pool = require("./db.js");
 const path = require("path");
 
-// Rota TESTE
-exports.teste = (req, res) => {
-  res.send("Teste");
-};
-
 // Rota cadastro cliente
 exports.clientes = async (req, res) => {
   const { nome, telefone, estado, cidade,endereco, email, password } = req.body;
