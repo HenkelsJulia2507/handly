@@ -187,7 +187,7 @@ p {
 .imagem img {
     margin-top: 130px;
     width: 600px;
-    height: 400px;
+    height: 300px;
 }
 input[type="checkbox"] {
   cursor: pointer;
@@ -207,34 +207,18 @@ input[type="checkbox"] {
   background-size: 10px;
 }
 
-/* Sair para esquerda com fade */
-.slide-fade-left {
-  animation: slideFadeLeft .5s ease forwards;
+/* sai indo para a ESQUERDA (contrário) */
+.slide-out-left {
+  animation: slideLeft .3s ease forwards;
 }
 
-@keyframes slideFadeLeft {
+@keyframes slideLeft {
   from {
     transform: translateX(0);
     opacity: 1;
   }
   to {
-    transform: translateX(-25%);
+    transform: translateX(-100%);
     opacity: 0;
-  }
-}
-
-/* Entrar vindo da direita com fade */
-body {
-  animation: fadeSlideInRight .5s ease;
-}
-
-@keyframes fadeSlideInRight {
-  from {
-    transform: translateX(25%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
   }
 }
