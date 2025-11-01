@@ -15,7 +15,7 @@
       <img src="./img/construction.png" alt="">
       <a href="loginPrestador.html"><button class="prestador">Sou prestador</button></a>
     </div>
-
+  <div id="toast" class="toast"></div>
 
     <div class="formulario">
       <form id="formLogin">
@@ -41,30 +41,46 @@
       </form>
     </div>
   </div>
-</body><script>
-    document.getElementById('formLogin').addEventListener('submit', function(e) {
-      e.preventDefault();
+</body>
+<script>
+  // Função para exibir o toast
+  function showToast(message, isError = false) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.style.backgroundColor = isError ? '#f44336' : '#4caf50';
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
 
-      const dados = {
-        email: this.email.value,
-        password: this.password.value,
-      };
+  // Evento submit do formulário
+  document.getElementById('formLogin').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      fetch('http://localhost:3000/loginCliente', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dados),
-      })
+    const dados = {
+      email: this.email.value,
+      password: this.password.value,
+    };
+
+    fetch('http://localhost:3000/loginCliente', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados),
+    })
       .then(res => res.json())
       .then(data => {
         if (data.sucesso) {
-          alert('Login realizado com sucesso!');
-          window.location.href = "tela1.html";
+          localStorage.setItem('usuarioLogado', 'true');
+          showToast('Login realizado com sucesso!');
+          setTimeout(() => {
+            window.location.href = "tela1.html";
+          }, 1500);
         } else {
-          alert('Email ou senha inválidos.');
+          showToast('Email ou senha inválidos.', true);
         }
       })
-      .catch(() => alert('Erro ao tentar logar.'));
-    });
+      .catch(() => showToast('Erro ao tentar logar.', true));
+  });
 </script>
 </html>

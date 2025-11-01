@@ -38,5 +38,17 @@
   </div>
         <script src="" async defer></script>
         
-    </body>
+</body>
+<script>
+ function loginSucesso() {
+    localStorage.setItem('usuarioLogado', 'true'); 
+    window.location.href = 'tela1.html'; 
+  }
+
+  document.getElementById('btnLogin').addEventListener('click', (e) => {
+    e.preventDefault();
+    loginSucesso();
+  });
+
+</script>
 </html>

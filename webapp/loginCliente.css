@@ -110,3 +110,35 @@ p {
   width: 400px;
   height: 400px;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: #56715c !important; 
+  -webkit-text-fill-color: black !important; 
+  transition: background-color 5000s ease-in-out 0s; 
+  box-shadow: 0 0 0px 1000px #56715c inset !important; 
+}
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  font-size: 17px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: visibility 0s, opacity 0.5s linear;
+  opacity: 0;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
