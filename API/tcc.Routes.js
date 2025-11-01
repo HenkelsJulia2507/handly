@@ -4,8 +4,6 @@ const router = express.Router();
 const tccController = require('./tcc.Controller.js');
 const pool = require('./db.js');
 
-//rota TESTE
-router.get("/teste1", tccController.teste);
 //Rota cadastro cliente
 router.post("/salvarClientes", tccController.clientes);
 //Rota cadastro de Prestador
