@@ -211,15 +211,5 @@ document.addEventListener('click', (e) => {
   }
 });
 
-document.getElementById('logoutBtn').addEventListener('click', (e) => {
-    e.preventDefault();
-    localStorage.removeItem('usuarioLogado');
-    window.location.href = 'telaInicio.html'; 
-});
-
- if (!localStorage.getItem('usuarioLogado')) {
-    window.location.href = 'telaInicio.html';
-  }
-
 </script>
 </html>
