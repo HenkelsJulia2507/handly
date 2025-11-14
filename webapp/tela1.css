@@ -14,8 +14,8 @@ header{
 }
 
 body {
-  background: #133b26;
-  color: #fff;
+  background: #f2f2f2;
+  color: #ffffff;
 }
 
 .topo {
@@ -161,6 +161,7 @@ body {
 
 h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #335f4c;
 }
 
 a{
@@ -248,7 +249,7 @@ a{
 }
 
 .categorias h2 {
-  color: #ffffff;
+  color: #335f4c;
   font-size: 1.8rem;
   margin-bottom: 40px;
 }
@@ -331,7 +332,7 @@ a{
 .circulo1{
   width: 135px;
   height: 100px;
-  background-color: #133b26;
+  background-color: #f2f2f2;
   border-radius: 0px 0px 90px 90px;
   justify-content: center;
   align-items: center;

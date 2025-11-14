@@ -211,5 +211,11 @@ document.addEventListener('click', (e) => {
   }
 });
 
+document.getElementById('logoutBtn').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    localStorage.removeItem('usuarioLogado'); 
+    window.location.href = 'telainicio.html'; 
+});
+
 </script>
 </html>

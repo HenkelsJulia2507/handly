@@ -30,13 +30,72 @@ body {
     width: 50%;
 }
 
-.campo-input{
-    display: block;
-    text-align: left;
+.campo-input {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #000;
 }
 
-.campo-input label{
-    margin-left: 15px;
+.campo-input input,
+.campo-input select {
+  padding-top: 28px;
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.campo-input label {
+  position: absolute;
+  left: 15px;
+  top: 14px;
+  color: #000000;
+  pointer-events: none;
+  display: flex;
+}
+
+.campo-input .char {
+  display: inline-block;
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.05s);
+}
+
+.campo-input .input:focus + label .char,
+.campo-input .input:valid + label .char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: black;
+  padding: 0 2px;;
+  padding: 0 2px;
+}
+
+/* Mantém a cor personalizada mesmo com autofill do Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: #56715c !important; /* mesma cor que você definiu */
+  -webkit-text-fill-color: black !important; /* mantém o texto preto */
+  transition: background-color 5000s ease-in-out 0s; /* truque pra forçar a cor */
+  box-shadow: 0 0 0px 1000px #56715c inset !important; /* aplica a cor no fundo */
+}
+
+.campo-input input,
+.campo-input select {
+  width: 220px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+  border: none;
+  background-color: #56715c;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .titulo{
