@@ -89,8 +89,10 @@ form {
     background-color: #193D2A;
 }
 
+.imagem img
+
 a {
-    color: #193D2A;
+    text-color: #193D2A;
 }
 
 p {
