@@ -12,7 +12,7 @@
       <img src="./img/construction.png" alt="" />
       <a id="btnPrestador"><button class="prestador"> Quero ser prestador</button></a>
     </div>
-
+  <div id="toast" class="toast"></div>
     <div class="formulario">
       <form id="formCadastro">
         <h1>O serviço que você <br> procura, está aqui!</h1>
@@ -106,6 +106,17 @@
   </div>
 </body>
   <script>
+   // Função para exibir o toast
+  function showToast(message, isError = false) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.style.backgroundColor = isError ? '#f44336' : '#4caf50';
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+
   const estadoSelect = document.getElementById('estado');
   const cidadeSelect = document.getElementById('cidade');
 
@@ -213,10 +224,12 @@
     });
 
     const data = await res.json();
-    alert(data.mensagem || 'Cadastro realizado com sucesso!');
+    showToast(data.mensagem || 'Cadastro realizado com sucesso!');
+    setTimeout(() => {
     window.location.href = "loginCliente.html";
+    }, 2500);
   } catch (error) {
-    alert('Erro ao cadastrar: ' + error.message);
+    showToast('Erro ao cadastrar: ' + error.message, true);
   }
   });
 

@@ -18,6 +18,7 @@
                     <h1>Tem clientes te esperando.</h1>
                     <h1>Cadastre-se!</h1>
                 </div>
+    <div id="toast" class="toast"></div>
 
                 <div class="campo-input">
                     <input type="text" id="nome" name="nome" required class="input" />
@@ -149,6 +150,16 @@
     </div>
 </body>
 <script>
+  function showToast(message, isError = false) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.style.backgroundColor = isError ? '#f44336' : '#4caf50';
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+
     const estadoSelect = document.getElementById('estado');
     const cidadeSelect = document.getElementById('cidade');
 
@@ -225,27 +236,47 @@
             cidadeSelect.appendChild(optionPadrao);
         }
     });
-    document.getElementById('formPrestador').addEventListener('submit', function (e) {
+    document.getElementById('formPrestador').addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        const dados = {
+        const estadoId = this.estado.value;
+        const cidadeId = this.cidade.value;
+
+        try {
+            const estadoRes = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoId}`);
+            const estadoDados = await estadoRes.json();
+            const nomeEstado = estadoDados.nome;
+
+            const cidadeRes = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${cidadeId}`);
+            const cidadeDados = await cidadeRes.json();
+            const nomeCidade = cidadeDados.nome;
+
+            const dados = {
             nome: this.nome.value,
             telefone: this.telefone.value,
-            estado: this.estado.value,
-            cidade: this.cidade.value,
+            estado: nomeEstado, 
+            cidade: nomeCidade,
             endereco: this.endereco.value,
             email: this.email.value,
             password: this.password.value,
-        };
+            especialidade: this.especialidade.value,
+            descricao: this.descricao.value
+            };
 
-        fetch('http://localhost:3000/salvarPrestador', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
-        })
-            .then(res => res.json())
-            .then(data => alert(data.mensagem || 'Cadastro realizado com sucesso!'))
-            .catch(() => alert('Erro ao cadastrar'));
+            const res = await fetch('http://localhost:3000/salvarPrestador', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dados)
+            });
+            const data = await res.json();
+
+            showToast(data.mensagem || 'Cadastro realizado com sucesso!');
+            setTimeout(() => {
+            window.location.href = "loginPrestador.html";
+            }, 2500);
+            } catch (error) {
+            showToast('Erro ao cadastrar: ' + error.message, true);
+        }
     });
-</script>
+    </script>
 </html>

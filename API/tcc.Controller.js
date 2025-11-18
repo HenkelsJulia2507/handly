@@ -19,11 +19,11 @@ exports.clientes = async (req, res) => {
 
 // Rota cadastro prestadores
 exports.prestadores = async (req, res) => {
-  const { nome, telefone, estado, cidade,endereco, email, password } = req.body;
+  const { nome, telefone, estado, cidade,endereco, email, password, especialidade, descricao } = req.body;
   try {
     await pool.query(
-      "INSERT INTO tabela_prestador (nome, telefone, estado, cidade, endereco, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)",
-      [nome, telefone, estado, cidade, endereco, email, password]
+      "INSERT INTO tabela_prestador (nome, telefone, estado, cidade, endereco, email, senha, especialidade, descricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      [nome, telefone, estado, cidade, endereco, email, password, especialidade, descricao]
     );
     res.json({ mensagem: "Cadastro realizado com sucesso!" });
   } catch (error) {
