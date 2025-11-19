@@ -215,13 +215,20 @@ a{
 
 .logo img{
   width: 120px;
-  height: 35px;
-  margin-left: 53px;
+  height: 60px;
   margin-top: 20px;
+}
+
+.logoInicio img{
+  width: 310px;
+  height: 101px;
+  margin-left: 53px;
+  margin-top: 30px;  
 }
 
 .footer.footer{
   height: 1px;
+  margin-top: -50px;
 }
 
 /* Responsividade */

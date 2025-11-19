@@ -186,9 +186,10 @@ p {
 
 .imagem img {
     margin-top: 130px;
-    width: 600px;
-    height: 300px;
+    width: 534px;
+    height: 466px;
 }
+
 input[type="checkbox"] {
   cursor: pointer;
 }

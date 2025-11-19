@@ -148,10 +148,8 @@ form {
     background-color: #193D2A;
 }
 
-.imagem img
-
 a {
-    text-color: #193D2A;
+    color: #193d2a; 
 }
 
 p {
@@ -167,6 +165,6 @@ p {
 
 .imagem img {
     margin-top: 130px;
-    width: 700px;
-    height: 400px;
+    width: 534px;
+    height: 466px;
 }
