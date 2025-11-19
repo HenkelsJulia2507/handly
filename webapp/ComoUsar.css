@@ -28,6 +28,12 @@ body {
     font-weight: bold;
 }
 
+header img{
+  width: 1px;
+  height: 1px;
+}
+
+
 .logo img {
   width: 200px;
   height: 70px;
