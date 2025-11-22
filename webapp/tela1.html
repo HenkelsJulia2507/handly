@@ -38,9 +38,12 @@
 
           <div class="buttons">
 
-            <button class="btn" onclick="window.location.href='loginCliente.html'">Sou cliente</a></button>
+            <button id="btnSouCliente" class="btn" onclick="window.location.href='loginCliente.html'">Sou cliente</button>
 
-            <button class="btn" onclick="window.location.href='loginPrestador.html'">Sou prestador</a></button>
+            <button id="btnSouPrestador" class="btn" onclick="window.location.href='loginPrestador.html'">Sou prestador</button>
+
+            <!-- botão que leva direto para a seção "O que você precisa" — fica oculto até o usuário estar logado -->
+            <button id="btnIrCategorias" class="btn" style="display:none">Solicitar um serviço</button>
           </div>
           <p class="instagram">
             <img src="img/instagram.png" alt="instagram"><a href="https://www.instagram.com/handlyy_/" target="_blank">
@@ -234,7 +237,7 @@
   const userIcon = document.getElementById('userIcon');
   const userPanel = document.getElementById('userPanel');
 
-  userIcon.addEventListener('click', () => {
+  if (userIcon) userIcon.addEventListener('click', () => {
     userPanel.classList.toggle('visible');
   });
 
@@ -244,12 +247,42 @@
     }
   });
 
-  document.getElementById('logoutBtn').addEventListener('click', function (event) {
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) logoutBtn.addEventListener('click', function (event) {
     event.preventDefault();
     localStorage.removeItem('usuarioLogado');
-    window.location.href = 'telainicio.html';
+    // recarrega a mesma página para atualizar a UI
+    window.location.href = window.location.pathname.split('/').pop() || 'tela1.html';
   });
 
+  // verificação mais robusta do estado de login
+  window.addEventListener('load', () => {
+    const raw = localStorage.getItem('usuarioLogado');
+    let estado = null;
+    try {
+      estado = raw ? JSON.parse(raw) : null;
+    } catch (err) {
+      estado = null; // dado inválido no localStorage
+    }
+
+    const btnCliente = document.getElementById('btnSouCliente');
+    const btnPrestador = document.getElementById('btnSouPrestador');
+    const btnIrCategorias = document.getElementById('btnIrCategorias');
+
+    const logged = !!(estado && (estado.role === 'cliente' || estado.role === 'prestador'));
+
+    if (btnCliente) btnCliente.style.display = logged ? 'none' : '';
+    if (btnPrestador) btnPrestador.style.display = logged ? 'none' : '';
+    if (btnIrCategorias) btnIrCategorias.style.display = logged ? 'inline-block' : 'none';
+
+    if (btnIrCategorias) {
+      btnIrCategorias.addEventListener('click', (e) => {
+        e.preventDefault();
+        const sec = document.querySelector('.categorias');
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  });
 </script>
 
 </html>

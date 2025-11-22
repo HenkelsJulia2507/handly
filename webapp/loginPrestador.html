@@ -74,6 +74,7 @@
     .then(res => res.json())
     .then(data => {
       if (data.sucesso) {
+      localStorage.setItem('usuarioLogado', JSON.stringify({ role: 'prestador', email: dados.email }));
       showToast('Login realizado com sucesso!');
       setTimeout(() => {
         window.location.href = "tela1.html";
