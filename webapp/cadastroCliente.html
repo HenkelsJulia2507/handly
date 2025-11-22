@@ -217,6 +217,8 @@
       password: this.password.value,
     };
 
+    localStorage.setItem('dadosPerfil', JSON.stringify(dados));
+
     const res = await fetch('http://localhost:3000/salvarClientes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root{
+  --bg: #f5f6f7;
+  --card: #ffffff;
+  --accent: #193D2A;
+  --muted: #666;
+  --toast-success: #4caf50;
+  --toast-error: #f44336;
+  --radius: 12px;
+  --gap: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: var(--bg);
+  color: #222;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+/* Container / Card */
+.perfil-container{
+  width: 100%;
+  max-width: 900px;
+}
+
+.perfil-card{
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+
+/* Header */
+.perfil-card h1{
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+/* Rows */
+.perfil-row{
+  display: flex;
+  gap: var(--gap);
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: var(--muted);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.perfil-row strong{
+  width: 140px; /* label width */
+  color: #000;
+  font-weight: 500;
+  flex: 0 0 140px;
+}
+
+.perfil-row span{
+  flex: 1 1 auto;
+  color: #333;
+  text-align: left;
+  word-break: break-word;
+}
+
+/* Actions */
+.acoes{
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.acoes button{
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: transform .12s ease, opacity .12s ease;
+}
+
+.acoes button:hover{ transform: translateY(-2px); }
+
+/* Toast */
+.toast{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #fff;
+  display: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.toast.show{
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Utility states */
+.toast.success{ background: var(--toast-success); }
+.toast.error{ background: var(--toast-error); }
+
+/* Responsive */
+@media (max-width: 600px){
+  body{ padding: 16px; }
+  .perfil-card{ padding: 16px; }
+  .perfil-row strong{ width: 120px; flex: 0 0 120px; font-size: .95rem; }
+  .perfil-card h1{ font-size: 1.25rem; }
+  .acoes{ justify-content: center; }
+}

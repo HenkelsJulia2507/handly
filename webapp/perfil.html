@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Perfil do Cliente</title>
+    <link rel="stylesheet" href="perfil.css" />
+</head>
+
+<body>
+    <main class="perfil-container">
+        <div id="toast" class="toast"></div>
+
+        <section class="perfil-card">
+            <h1>Meu Perfil</h1>
+            <div class="perfil-row"><strong>Nome:</strong> <span id="nome"></span></div>
+            <div class="perfil-row"><strong>Telefone:</strong> <span id="telefone"></span></div>
+            <div class="perfil-row"><strong>Email:</strong> <span id="email"></span></div>
+            <div class="perfil-row"><strong>Endereço:</strong> <span id="endereco"></span></div>
+            <div class="perfil-row"><strong>Estado:</strong> <span id="estado"></span></div>
+            <div class="perfil-row"><strong>Cidade:</strong> <span id="cidade"></span></div>
+
+            <div class="acoes">
+                <button id="editarBtn">Editar</button>
+                <a href="tela1.html">
+                    <button>Sair</button>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showToast(msg, isError = false) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.style.background = isError ? '#f44336' : '#4caf50';
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+
+        async function carregarPerfil() {
+            const raw = localStorage.getItem('usuarioLogado');
+            if (!raw) {
+                showToast('Usuário não autenticado.', true);
+                // não logado: redireciona para login
+                window.location.href = 'loginCliente.html';
+                return;
+            }
+
+            let user;
+            try { user = JSON.parse(raw); } catch {
+                localStorage.removeItem('usuarioLogado');
+                window.location.href = 'loginCliente.html';
+                return;
+            }
+
+            const email = user.email;
+            if (!email) {
+                showToast('Dados do usuário incompletos.', true);
+                return;
+            }
+
+            try {
+                const res = await fetch(`http://localhost:3000/clientes/me?email=${encodeURIComponent(email)}`);
+                if (!res.ok) throw new Error('Não foi possível carregar perfil');
+                const data = await res.json();
+
+                const map = {
+                    nome: data.nome,
+                    telefone: data.telefone,
+                    email: data.email,
+                    endereco: data.endereco,
+                    estado: data.estado,
+                    cidade: data.cidade
+                };
+
+                Object.keys(map).forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = map[id] ?? '—';
+                });
+            } catch (err) {
+                showToast(err.message || 'Erro ao carregar perfil', true);
+            }
+        }
+
+        window.addEventListener('load', carregarPerfil);
+
+
+        document.getElementById('editarBtn').addEventListener('click', () => {
+            window.location.href = 'editarCliente.html';
+        });
+    </script>
+</body>
+
+</html>
