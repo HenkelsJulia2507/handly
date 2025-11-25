@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <div id="toast" class="toast"></div>
     <div class="container">
      <div id="toast" class="toast"></div>
         <div class="formulario">
@@ -73,13 +74,16 @@
     .then(res => res.json())
     .then(data => {
       if (data.sucesso) {
-        alert('Login realizado com sucesso!');
-        // Redirecionar para a página desejada após login
+      localStorage.setItem('usuarioLogado', JSON.stringify({ role: 'prestador', email: dados.email }));
+      showToast('Login realizado com sucesso!');
+      setTimeout(() => {
+        window.location.href = "tela1.html";
+      }, 1500);
       } else {
-        alert('Email ou senha inválidos.');
+        showToast('Email ou senha inválidos.', true);
       }
-    })
-    .catch(() => alert('Erro ao tentar logar.'));
+      })
+      .catch(() => showToast('Erro ao tentar logar.', true));
   });
 </script>
 

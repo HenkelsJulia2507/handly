@@ -71,3 +71,20 @@ exports.loginPrestador = async (req, res) => {
     res.status(500).json({ erro: "Erro durante login" });
   }
 };
+// Rota buscar cliente por email
+exports.getCliente = async (req, res) => {
+  const email = req.query.email;
+  if (!email) return res.status(400).json({ erro: 'email obrigatório' });
+
+  try {
+    const [rows] = await pool.query(
+      'SELECT nome, telefone, estado, cidade, endereco, email FROM tabela_cliente WHERE email = ? LIMIT 1',
+      [email]
+    );
+    if (rows.length === 0) return res.status(404).json({ erro: 'cliente não encontrado' });
+    res.json(rows[0]);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: 'Erro ao buscar cliente' });
+  }
+};

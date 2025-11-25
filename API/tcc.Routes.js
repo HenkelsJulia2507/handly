@@ -12,5 +12,7 @@ router.post("/salvarPrestador", tccController.prestadores);
 router.post("/loginCliente", tccController.loginCliente);
 //Rota login prestadore
 router.post("/loginPrestador", tccController.loginPrestador);
+// Rota para obter dados do cliente (usada por perfil.html)
+router.get('/clientes/me', tccController.getCliente);
 
 module.exports = router
