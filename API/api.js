@@ -6,6 +6,8 @@ const app = express();
 const port = 3000;
 const routes = require('./tcc.Routes');
 
+
+//Inicialização do servidor
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -17,6 +19,7 @@ app.get("/", (req, res) => {
 
 app.use("/", routes)
 
+//Iniciar o servidor
 app.listen(port, "0.0.0.0", () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
