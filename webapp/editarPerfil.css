@@ -260,3 +260,8 @@ h3 {
     font-size: 14px;
     margin-top: 5px;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}

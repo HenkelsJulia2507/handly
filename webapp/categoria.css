@@ -1,8 +1,12 @@
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
 header {
-  background-color: #224C36;
+  background-color: #27473a;
   color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 4px 30px;
 }
@@ -19,10 +23,11 @@ header img{
 
 .categorias h2 {
   color: #335f4c;
-  font-size: 40px;
+  font-size: 50px;
   margin-top: -10px;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 .grid-categorias {
@@ -32,6 +37,7 @@ header img{
   justify-items: center;
   max-width: 900px;
   margin: 0 auto;
+  margin-top: 35px;
 }
 
 .categoria {
@@ -50,8 +56,8 @@ header img{
 }
 
 .categoria img {
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   margin-bottom: 10px;
   filter: brightness(0) invert(1); 
 }
@@ -68,4 +74,22 @@ header img{
   width: 100%;  
   height: 720px; 
   background: #0f2c1d no-repeat right; 
+}
+
+button.btn-continue {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 30px;
+  background-color: #27473a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
 }
