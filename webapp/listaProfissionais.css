@@ -198,7 +198,6 @@ main h2 {
 }
 
 .card .info p {
-<<<<<<< HEAD
   font-size: 0.85rem;
   color: var(--text-light);
   margin: 6px 0;
@@ -256,13 +255,4 @@ main h2 {
   .search-bar { max-width: 100%; }
   .profissionais-grid { grid-template-columns: 1fr; }
   main { padding: 16px; }
-=======
-  font-size: 14px;
-  color: #666;
-}
-
-a{
-  text-decoration: none;
-  color: inherit;
->>>>>>> 9fa53bb2714fd1d5990c0c049d7e9eb224076758
 }
