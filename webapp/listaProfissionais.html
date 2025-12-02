@@ -8,69 +8,27 @@
 </head>
 <body>
   <header>
-    <h1><img src="img/HandlyLogo.png" alt="Handly"></h1>
-    
+    <div class="logo"><img src="img/HandlyLogo.png" alt="Handly"></div>
+    <div class="search-bar">
+      <input type="text" id="busca" placeholder="Buscar profissional...">
+      <button id="btnBuscar">🔍</button>
+    </div>
   </header>
 
-  <main>
-    <h2>Encontre seu profissional:</h2>
+<main>
+  <h2>Encontre seu profissional:</h2>
+  <div id="listaProfissionais" class="profissionais-grid">
+  </div>
+  
 
-    <div class="card">
-      <img src="https://via.placeholder.com/60" alt="Foto do profissional">
-      <div class="info">
-        <h3>Nome <span>⭐ avaliação</span></h3>
-        <p> Sobre o profissional</p>
-      </div>
-    </div>
+  <div class="actions-bar">
+    <a href="tela1.html" class="btn-primary">🏠 Voltar ao Início</a>
+  </div>
+  
+  <div id="toast" class="toast"></div>
+</main>
 
-    <div class="card">
-      <img src="https://via.placeholder.com/60" alt="Foto do profissional">
-      <div class="info">
-        <h3>Marcos Leandro <span>⭐ 4.5 </span></h3>
-        <p> Professor de Educação Física </p>
-      </div>
-    </div>
 
-    <div class="card">
-      <img src="https://via.placeholder.com/60" alt="Foto do profissional">
-      <div class="info">
-        <h3>Antônia Pereira <span>⭐ 4.2</span></h3>
-        <p> Professora de Matemática e Física </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/60" alt="Foto do profissional">
-      <div class="info">
-        <h3>Luciano Barbosa <span>⭐ 4.0</span></h3>
-        <p> Professor de História </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/60" alt="Foto do profissional">
-      <div class="info">
-        <h3>Gabriela Neves <span>⭐ 3.9</span></h3>
-        <p> Professora de Biologia </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/60" alt="Foto do profissional">
-      <div class="info">
-        <h3>Márcia Santos <span>⭐ 3.7 </span></h3>
-        <p> Professora de Artes </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/60" alt="Foto do profissional">
-      <div class="info">
-        <h3> Maurício de Sousa <span>⭐ 3.7 </span></h3>
-        <p> Professor de Música </p>
-      </div>
-    </div>
-
-  </main>
+  <script src="listaProfissionais.js"></script>
 </body>
 </html>

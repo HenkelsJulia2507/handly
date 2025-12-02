@@ -88,3 +88,24 @@ exports.getCliente = async (req, res) => {
     res.status(500).json({ erro: 'Erro ao buscar cliente' });
   }
 };
+// Rota profissionais
+exports.profissionais = async (req, res) => {
+  const { especialidade } = req.query;
+
+  try {
+    let query = 'SELECT id_prestador, nome, especialidade, descricao, avaliacao FROM tabela_prestador';
+    const params = [];
+
+    if (especialidade) {
+      query += ' WHERE especialidade LIKE ?';
+      params.push(`%${especialidade}%`);
+    }
+
+    const [rows] = await pool.query(query, params);
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao buscar profissionais' });
+  }
+};
+

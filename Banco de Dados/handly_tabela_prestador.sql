@@ -25,3 +25,4 @@ CREATE TABLE `tabela_prestador` (
 
 SET foreign_key_checks = 1;
 SET unique_checks = 1;
+ALTER TABLE tabela_prestador ADD COLUMN avaliacao DECIMAL(2,1) DEFAULT 5.0;
