@@ -30,7 +30,13 @@ body {
 /* Barra Superior */
 .header {
     background-color: var(--color-primary);
-    padding: 15px 30px;
+    padding: 4px 30px;
+}
+
+header img{
+  width: 110px;
+  height: 45px;
+  margin-left: -250px;
 }
 
 .header-content {
