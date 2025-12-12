@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Handly</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="editarPerfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo"><img src="img/HandlyLogo.png" alt=""></h1>
+
+            <div class="user-icon" aria-label="Perfil do Usuário"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="profile-header-section">
+            <div class="profile-summary">
+                <div class="profile-picture"></div>
+                <div class="profile-info">
+                    <h2>João Silva</h2>
+                    <p>Encanador - 10 anos de experiência</p>
+                    <div class="rating">
+                        <span class="star-icon"><i class="fas fa-star"></i></span>
+                        <span class="rating-value">4.0</span>
+                    </div>
+                </div>
+            </div>
+            <button class="action-button primary-button">
+                <a href="https://api.whatsapp.com/send/?phone=47984777215&text&type=phone_number&app_absent=0">
+                    Entre em contato comigo!
+                </a>
+            </button>
+        </section>
+
+        <div class="content-sections">
+            <section class="about-me-section">
+                <h3>Sobre mim</h3>
+                <p>Olá, me chamo João Silva, trabalho na área de encanamento faz 10 anos, amo meu trabalho e prezo pela qualidade e agilidade do meu serviço. Faço diária e empreitada, clique no botão e entre em contato comigo!!</p>
+                
+                <div class="attachment-area">
+
+                </div>
+                <div class="photo-grid">
+                    <div class=""><img src="data:image/jpeg;base64,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" alt=""></div>
+                    <div class="photo-placeholder"></div>
+                    <div class="photo-placeholder"></div>
+                    <div class="photo-placeholder"></div>
+                    <div class="photo-placeholder"></div>
+                </div>
+            </section>
+
+            <section class="reviews-section">
+                <h3>Avaliações</h3>
+                <div class="review-ratings-summary">
+                    <div class="rating-box"></div>
+                    <div class="rating-box"></div>
+                    <div class="rating-box"></div>
+                    <div class="rating-box"></div>
+                    <div class="rating-box"></div>
+                </div>
+
+                <div class="review-list">
+                    <div class="review-item">
+                        <div class="user-avatar"></div>
+                        <div class="review-details">
+                            <p class="username">Brian Matheus Wruckyni</p> 
+                            <div class="stars" aria-label="0.0 Estrelas">
+                                <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                                    class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <p class="comment">Arrumou certinho meu encanamento, recomendo!!</p>
+                        </div>
+                    </div>
+                    <div class="review-item">
+                        <div class="user-avatar"></div>
+                        <div class="review-details">
+                            <p class="username">Carlos Souza</p>
+                            <div class="stars" aria-label="0.0 Estrelas">
+                                <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                                    class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <p class="comment">Ótimo encanador, concertou tudo certinho</p>
+                        </div>
+                    </div>
+                    <div class="review-item">
+                        <div class="user-avatar"></div>
+                        <div class="review-details">
+                            <p class="username">Mariana Louise •</p>
+                            <div class="stars" aria-label="0.0 Estrelas">
+                                <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                                    class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <p class="comment">Muito bom!!!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

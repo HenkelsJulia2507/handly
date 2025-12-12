@@ -88,6 +88,7 @@ header img{
 }
 
 .profile-info h2 {
+    margin-top: 20px;
     font-size: 28px;
     color: var(--color-text-dark);
     margin-bottom: 5px;
@@ -173,18 +174,9 @@ h3 {
     margin-bottom: 10px;
 }
 
-.attachment-area {
-    border: 1px dashed var(--color-border);
-    padding: 10px;
-    text-align: left;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    color: var(--color-text-subtle);
-    cursor: pointer;
-}
-
 
 .photo-grid {
+    margin: 2px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
